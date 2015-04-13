@@ -1,4 +1,17 @@
+parameters:
+    admin.adminformhandler.class: MaterialDesign\BackendBundle\Form\Handler\AdminUserFormHandler
+    admin.adminmanager.class: MaterialDesign\BackendBundle\Form\Handler\AdminUserManager
+    admin.create_salt.class: MaterialDesign\BackendBundle\EventListener\RegisterAdminEventSubscriber
+
 services:
-#    backend.example:
-#        class: MaterialDesign\BackendBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    admin.admin_user_manager:
+        class: %admin.adminmanager.class%
+        arguments: [@doctrine.orm.entity_manager]
+    admin.admin_user_form_handler:
+        class: %admin.adminformhandler.class%
+        arguments: [@admin.admin_user_manager]
+    admin.create_salt_listener:
+        class: %admin.create_salt.class%
+        arguments: [@security.encoder_factory]
+        tags:
+            - { name: doctrine.event_subscriber }
