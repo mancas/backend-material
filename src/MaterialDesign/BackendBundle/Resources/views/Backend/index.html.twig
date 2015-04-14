@@ -9,19 +9,60 @@
 {% endblock %}
 
 {% block content %}
-    <div class="widget-box">
-        <div class="widget-title">
-            <span class="icon">
-                <i class="fa fa-bar-chart-o"></i>
-            </span>
-            <h5>{{ 'Resumen del sitio' }}</h5>
-        </div>
-        <div class="widget-content">
-            <div class="row">
-                <div class="col-md-4">
+    <div class="row charts">
+        <!-- Small chart -->
+        <div class="col-md-3">
+            <div class="chart-sm-item chart-green">
+                <div class="clearfix">
+                    <div class="chart-bars">
+                        <canvas id="test-chart"></canvas>
+                    </div>
+                    <div class="chart-desc">
+                        <span>Items sold</span>
+                        <h2>1234</h2>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="orders-resume chart"></div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="chart-sm-item chart-red">
+                <div class="clearfix">
+                    <div class="chart-bars">
+                        <canvas id="test-chart-2"></canvas>
+                    </div>
+                    <div class="chart-desc">
+                        <span>Posts</span>
+                        <h2>34</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="chart-sm-item chart-deep-purple">
+                <div class="clearfix">
+                    <div class="chart-bars">
+                        <canvas id="test-chart-3"></canvas>
+                    </div>
+                    <div class="chart-desc">
+                        <span>CPC</span>
+                        <h2>7379,323</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="chart-sm-item chart-purple">
+                <div class="clearfix">
+                    <div class="chart-bars">
+                        <canvas id="test-chart-4"></canvas>
+                    </div>
+                    <div class="chart-desc">
+                        <span>Visits</span>
+                        <h2>48271</h2>
+                    </div>
                 </div>
             </div>
         </div>
@@ -30,9 +71,103 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('bundles/backend/js/excanvas.min.js') }}"></script>
+    {#<script src="{{ asset('bundles/backend/js/excanvas.min.js') }}"></script>
     <script src="{{ asset('bundles/backend/js/jquery.flot.min.js') }}"></script>
     <script src="{{ asset('bundles/backend/js/jquery.flot.resize.min.js') }}"></script>
     <script src="{{ asset('bundles/backend/js/jquery.flot.canvas.js') }}"></script>
-    <script src="{{ asset('bundles/backend/js/jquery.flot.time.min.js') }}"></script>
+    <script src="{{ asset('bundles/backend/js/jquery.flot.time.min.js') }}"></script>#}
+
+    <script>
+        Array.prototype.max = function() {
+            return Math.max.apply(null, this);
+        };
+
+        Array.prototype.min = function() {
+            return Math.min.apply(null, this);
+        };
+
+        var Charts = {
+            hSpace: 4,
+            offsetX: 5,
+            offsetY: 0,
+            tooltips: [],
+            bars: function c_bars(id, values, height, width, color) {
+                var canvas = document.querySelector('#' + id);
+                var clientRect = canvas.getBoundingClientRect();
+                canvas.width = clientRect.width;
+                canvas.height = clientRect.height;
+                if (typeof canvas === 'undefined') {
+                    console.error('Canvas element does not exist');
+                    return;
+                }
+                var cWidth = (width ? width : canvas.width);
+                var cHeight = (height ? height : canvas.height);
+                var yScale = cHeight/values.max();
+                var ctx = canvas.getContext('2d');
+                var barWidth = cWidth/values.length - this.hSpace;
+                var xScalar = cWidth/values.length;
+
+                ctx.fillStyle = color ? color : '#ffffff';
+                var points = [];
+                for (var i = 0; i < values.length; i++) {
+                    ctx.fillRect(1+ i * xScalar,
+                            cHeight - values[i] * yScale, barWidth,
+                            values[i] * yScale);
+                    points.push({x: 1 + i * xScalar, x2: 1 + i * xScalar + barWidth, value: values[i]});
+                }
+
+                canvas.addEventListener('mousemove', function (evt) {
+                    var mouse = this.getMousePos(canvas, evt);
+                    for (var i = 0; i < points.length; i++) {
+                        if (mouse.x < points[i].x || mouse.x > points[i].x2) {
+                            continue;
+                        } else {
+                            this.createTooltipIfNeeded(canvas, points[i].value, mouse);
+                            return;
+                        }
+                    }
+                }.bind(this));
+
+                canvas.addEventListener('mouseout', function (evt) {
+                    this.destroyTooltip(canvas);
+                }.bind(this));
+            },
+
+            getMousePos: function c_getMousePos(canvas, evt) {
+                var rect = canvas.getBoundingClientRect();
+                return {
+                    x: evt.clientX - rect.left,
+                    y: evt.clientY - rect.top
+                };
+            },
+
+            createTooltipIfNeeded: function c_createTooltipIfNeeded(canvas, value, mouse) {
+                var span;
+                if (this.tooltips[canvas.id]) {
+                    span = this.tooltips[canvas.id];
+                } else {
+                    span = document.createElement('span');
+                    span.classList.add('chart-tooltip');
+                    span.style.position = 'absolute';
+                    canvas.parentNode.appendChild(span);
+                    this.tooltips[canvas.id] = span;
+                }
+
+                span.textContent = value;
+                span.style.top = (mouse.y - (span.clientHeight/2) - this.offsetY) + 'px';
+                span.style.left = (mouse.x + span.clientWidth + this.offsetX) + 'px';
+            },
+
+            destroyTooltip: function c_destroyTootltip(canvas) {
+                var span = this.tooltips[canvas.id];
+                delete this.tooltips[canvas.id];
+                span.parentNode.removeChild(span);
+            }
+        };
+
+        Charts.bars('test-chart', [20, 3, 2, 1, 9, 4, 1, 2, 8, 7], null, null, '#ffffff');
+        Charts.bars('test-chart-2', [9, 4,9, 3, 2, 1, 1, 2, 8, 7], null, null, '#ffffff');
+        Charts.bars('test-chart-3', [9, 3, 2, 8, 7,9, 3, 2, 1], null, null, '#ffffff');
+        Charts.bars('test-chart-4', [9, 3, 2, 1, 9,9, 3, 2, 1, 8, 7], null, null, '#ffffff');
+    </script>
 {% endblock %}

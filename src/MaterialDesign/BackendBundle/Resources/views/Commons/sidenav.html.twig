@@ -40,14 +40,13 @@
                 </a>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="" class="active" title="{{ 'Events' | trans }}">
-                            <i class="fa fa-calendar"></i> {{ 'Events' | trans }}
+                        <a href="" title="{{ 'Posts' | trans }}">
+                            {{ 'Posts' | trans }}
                         </a>
                     </li>
                     <li>
-                        <a href="" title="{{ 'Blog' | trans }}">
-                            <i class="fa fa-pencil"></i> {{ 'Blog' | trans }}
-                            <i class="fa fa-caret-down pull-right"></i>
+                        <a href="" title="{{ 'Tags' | trans }}">
+                            {{ 'Tags' | trans }}
                         </a>
                     </li>
                 </ul>
@@ -81,15 +80,15 @@
                 element.addEventListener('click', function (evt) {
                     evt.preventDefault();
                     evt.stopPropagation();
-                    var ul = evt.target.nextElementSibling;
-                    if (typeof ul === 'undefined') {
+                    var li = evt.target.parentNode;
+                    if (typeof li === 'undefined') {
                         return;
                     }
 
-                    if (ul.classList.contains('open')) {
-                        ul.classList.remove('open');
+                    if (li.classList.contains('open')) {
+                        li.classList.remove('open');
                     } else {
-                        ul.classList.add('open');
+                        li.classList.add('open');
                     }
                 }.bind(this))
             }.bind(this));

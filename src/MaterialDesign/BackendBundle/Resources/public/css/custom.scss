@@ -4,18 +4,23 @@ $material-red-hover: #c62828;
 $material-pink: #e91e63;
 $material-pink-hover: #ad1457;
 $material-purple: #9c27b0;
+$material-purple-hover: #6a1b9a;
 $material-deep-purple: #673ab7;
+$material-deep-purple-hover: #4527a0;
 $material-indigo: #3f51b5;
 $material-blue: #2196f3;
 $material-blue-hover: #1565c0;
 $material-light-blue: #03a9f4;
 $material-cyan: #00bcd4;
+$material-cyan-hover: #00838f;
 $material-teal: #009688;
 $material-green: #4caf50;
+$material-green-hover: #2e7d32;
 $material-light-green: #8bc34a;
 $material-lime: #cddc39;
 $material-yellow: #ffeb3b;
 $material-amber: #ffc107;
+$material-amber-hover: #ff8f00;
 $material-orange: #ff9800;
 $material-deep-orange: #ff5722;
 $material-brown: #795548;
@@ -41,6 +46,7 @@ body, html {
 
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 /** HEADER **/
@@ -214,6 +220,7 @@ header {
     position: relative;
     height: 14rem;
     width: 100%;
+    max-width: 25rem;
     overflow: hidden;
     padding: 1.5rem;
     background-color: $material-blue-hover;
@@ -289,16 +296,48 @@ header {
       .active {
         background-color: $background-hover;
         color: $text;
+        font-weight: bold;
       }
     }
 
     .submenu {
       ul {
         max-height: 0;
+        background-color: $background-hover;
+
+        li {
+          &:first-of-type {
+            border-top: solid 0.2rem $dividers;
+          }
+          &:last-of-type {
+            border-bottom: none;
+          }
+
+          a {
+            font-weight: bold;
+            padding-left: 4rem;
+            font-size: 1.2rem;
+            color: $secondary-icons;
+            &:hover {
+              color: $text;
+            }
+          }
+        }
       }
 
-      ul.open {
+      i.pull-right {
+        transition: transform 300ms ease 100ms;
+        transform: rotate(0deg);
+      }
+    }
+
+    .submenu.open {
+      ul {
         max-height: 30rem;
+      }
+
+      i.pull-right {
+        transform: rotate(180deg);
       }
     }
   }
@@ -324,6 +363,130 @@ header {
   .profile-name {
     i {
       transform: rotate(0deg);
+    }
+  }
+}
+
+/** CONTENT **/
+#main {
+  width: 100%;
+  height: 100%;
+}
+
+#content {
+  padding: 8rem 0 3rem 25rem;
+}
+
+/** CHARTS **/
+.chart-cyan {
+  background-color: $material-cyan;
+  &:before {
+    background-color: $material-cyan-hover;
+  }
+}
+
+.chart-red {
+  background-color: $material-red;
+  &:before {
+    background-color: $material-red-hover;
+  }
+}
+
+.chart-amber {
+  background-color: $material-amber;
+  &:before {
+    background-color: $material-amber-hover;
+  }
+}
+
+.chart-green {
+  background-color: $material-green;
+  &:before {
+    background-color: $material-green-hover;
+  }
+}
+
+.chart-purple {
+  background-color: $material-purple;
+  &:before {
+    background-color: $material-purple-hover;
+  }
+}
+
+.chart-deep-purple {
+  background-color: $material-deep-purple;
+  &:before {
+    background-color: $material-deep-purple-hover;
+  }
+}
+
+.chart-sm-item {
+  margin-bottom: 3rem;
+  position: relative;
+  box-shadow: 0 0.1rem 0.1rem $box-shadow;
+  min-height: 2.5rem;
+
+  .clearfix {
+    position: relative;
+  }
+  
+  .chart-tooltip {
+    background-color: $white;
+    width: 2.2rem;
+    height: 2.2rem;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    box-shadow: 0 0.1rem 0.1rem $box-shadow;
+  }
+
+  &:before {
+    content: '';
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: width 300ms ease-in;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
+
+  .chart-bars {
+    float: left;
+    padding: 1.5rem;
+    width: 50%;
+    canvas {
+      width: 100%;
+      height: 5rem;
+      vertical-align: top;
+    }
+  }
+
+  .chart-desc {
+    color: $white;
+    float:left;
+    width: 50%;
+    text-align: center;
+    padding: 1.6rem 1.2rem;
+
+     * {
+       margin: 0;
+     }
+
+    h2 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 2.2rem;
+    }
+
+    span {
+      font-size: 1.2rem;
     }
   }
 }

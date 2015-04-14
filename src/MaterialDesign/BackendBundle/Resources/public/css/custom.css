@@ -3,7 +3,8 @@ body, html {
   height: 100%; }
 
 * {
-  margin: 0; }
+  margin: 0;
+  box-sizing: border-box; }
 
 /** HEADER **/
 body[data-color="red"] header {
@@ -106,6 +107,7 @@ header {
     position: relative;
     height: 14rem;
     width: 100%;
+    max-width: 25rem;
     overflow: hidden;
     padding: 1.5rem;
     background-color: #1565c0; }
@@ -158,11 +160,29 @@ header {
           margin-right: 0.8rem; }
       #sidenav ul li .active {
         background-color: #f4f4f4;
-        color: rgba(0, 0, 0, 0.87); }
+        color: rgba(0, 0, 0, 0.87);
+        font-weight: bold; }
     #sidenav ul .submenu ul {
-      max-height: 0; }
-    #sidenav ul .submenu ul.open {
+      max-height: 0;
+      background-color: #f4f4f4; }
+      #sidenav ul .submenu ul li:first-of-type {
+        border-top: solid 0.2rem rgba(0, 0, 0, 0.12); }
+      #sidenav ul .submenu ul li:last-of-type {
+        border-bottom: none; }
+      #sidenav ul .submenu ul li a {
+        font-weight: bold;
+        padding-left: 4rem;
+        font-size: 1.2rem;
+        color: rgba(0, 0, 0, 0.54); }
+        #sidenav ul .submenu ul li a:hover {
+          color: rgba(0, 0, 0, 0.87); }
+    #sidenav ul .submenu i.pull-right {
+      transition: transform 300ms ease 100ms;
+      transform: rotate(0deg); }
+    #sidenav ul .submenu.open ul {
       max-height: 30rem; }
+    #sidenav ul .submenu.open i.pull-right {
+      transform: rotate(180deg); }
 
 #sidenav[data-toggle=true] ul#profile-menu {
   max-height: 30rem; }
@@ -173,5 +193,93 @@ header {
   max-height: 0; }
 #sidenav[data-toggle=false] .profile-name i {
   transform: rotate(0deg); }
+
+/** CONTENT **/
+#main {
+  width: 100%;
+  height: 100%; }
+
+#content {
+  padding: 8rem 0 3rem 25rem; }
+
+/** CHARTS **/
+.chart-cyan {
+  background-color: #00bcd4; }
+  .chart-cyan:before {
+    background-color: #00838f; }
+
+.chart-red {
+  background-color: #f44336; }
+  .chart-red:before {
+    background-color: #c62828; }
+
+.chart-amber {
+  background-color: #ffc107; }
+  .chart-amber:before {
+    background-color: #ff8f00; }
+
+.chart-green {
+  background-color: #4caf50; }
+  .chart-green:before {
+    background-color: #2e7d32; }
+
+.chart-purple {
+  background-color: #9c27b0; }
+  .chart-purple:before {
+    background-color: #6a1b9a; }
+
+.chart-deep-purple {
+  background-color: #673ab7; }
+  .chart-deep-purple:before {
+    background-color: #4527a0; }
+
+.chart-sm-item {
+  margin-bottom: 3rem;
+  position: relative;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
+  min-height: 2.5rem; }
+  .chart-sm-item .clearfix {
+    position: relative; }
+  .chart-sm-item .chart-tooltip {
+    background-color: #ffffff;
+    width: 2.2rem;
+    height: 2.2rem;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3); }
+  .chart-sm-item:before {
+    content: '';
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: width 300ms ease-in; }
+  .chart-sm-item:hover:before {
+    width: 100%; }
+  .chart-sm-item .chart-bars {
+    float: left;
+    padding: 1.5rem;
+    width: 50%; }
+    .chart-sm-item .chart-bars canvas {
+      width: 100%;
+      height: 5rem;
+      vertical-align: top; }
+  .chart-sm-item .chart-desc {
+    color: #ffffff;
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 1.6rem 1.2rem; }
+    .chart-sm-item .chart-desc * {
+      margin: 0; }
+    .chart-sm-item .chart-desc h2 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 2.2rem; }
+    .chart-sm-item .chart-desc span {
+      font-size: 1.2rem; }
 
 /*# sourceMappingURL=custom.css.map */
