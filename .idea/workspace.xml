@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4926e58d-53ca-40b8-8063-0d0fe890c55b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/js/sparkline.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Layouts/2columns.html.twig" afterPath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Layouts/2columns.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/css/custom.css.map" afterPath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/css/custom.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/css/custom.css" afterPath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/css/custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/css/custom.scss" afterPath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/css/custom.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Backend/index.html.twig" afterPath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Backend/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Commons/sidenav.html.twig" afterPath="$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Commons/sidenav.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="backend-material.iws" />
@@ -37,7 +34,7 @@
       <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.666667" vertical-offset="162" max-vertical-offset="900">
+            <state vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="900">
               <caret line="22" column="17" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="17" />
               <folding />
             </state>
@@ -47,18 +44,8 @@
       <file leaf-file-name="custom.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/css/custom.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6477275" vertical-offset="7493" max-vertical-offset="8946">
-              <caret line="439" column="44" selection-start-line="439" selection-start-column="44" selection-end-line="439" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Commons/header.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="504">
-              <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+            <state vertical-scroll-proportion="-13.222222" vertical-offset="10731" max-vertical-offset="12492">
+              <caret line="616" column="40" selection-start-line="616" selection-start-column="40" selection-end-line="616" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -67,8 +54,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Backend/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6705491" vertical-offset="2603" max-vertical-offset="3204">
-              <caret line="167" column="37" selection-start-line="167" selection-start-column="37" selection-end-line="167" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.37104824" vertical-offset="2189" max-vertical-offset="6354">
+              <caret line="134" column="57" selection-start-line="134" selection-start-column="57" selection-end-line="134" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -77,11 +64,9 @@
       <file leaf-file-name="2columns.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Layouts/2columns.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.333334" vertical-offset="0" max-vertical-offset="864">
+            <state vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="864">
               <caret line="32" column="78" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
-              <folding>
-                <marker date="1429011692355" expanded="true" signature="471:532" placeholder="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,8 +74,8 @@
       <file leaf-file-name="sidenav.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Commons/sidenav.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.740741" vertical-offset="466" max-vertical-offset="1872">
-              <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+            <state vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="1872">
+              <caret line="7" column="96" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="96" />
               <folding />
             </state>
           </provider>
@@ -627,6 +612,86 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Commons/header.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Backend/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Layouts/2columns.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="864">
+          <caret line="32" column="78" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Commons/sidenav.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="466" max-vertical-offset="1872">
+          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="900">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/css/custom.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7493" max-vertical-offset="8946">
+          <caret line="439" column="44" selection-start-line="439" selection-start-column="44" selection-end-line="439" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Commons/header.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Backend/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3204">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Layouts/2columns.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="864">
+          <caret line="32" column="78" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Commons/sidenav.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="466" max-vertical-offset="1872">
+          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="900">
@@ -880,29 +945,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Commons/sidenav.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/js/sparkline.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.740741" vertical-offset="466" max-vertical-offset="1872">
-          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.666667" vertical-offset="162" max-vertical-offset="900">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="0.11464968" vertical-offset="0" max-vertical-offset="628">
+          <caret line="4" column="10335" selection-start-line="4" selection-start-column="10335" selection-end-line="4" selection-end-column="10335" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Layouts/2columns.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.333334" vertical-offset="0" max-vertical-offset="864">
+        <state vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="864">
           <caret line="32" column="78" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
-          <folding>
-            <marker date="1429011692355" expanded="true" signature="471:532" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -914,28 +968,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/js/sparkline.min.js">
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Commons/sidenav.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11464968" vertical-offset="0" max-vertical-offset="628">
-          <caret line="4" column="10335" selection-start-line="4" selection-start-column="10335" selection-end-line="4" selection-end-column="10335" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="1872">
+          <caret line="7" column="96" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="900">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/public/css/custom.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6477275" vertical-offset="7493" max-vertical-offset="8946">
-          <caret line="439" column="44" selection-start-line="439" selection-start-column="44" selection-end-line="439" selection-end-column="44" />
+        <state vertical-scroll-proportion="-13.222222" vertical-offset="10731" max-vertical-offset="12492">
+          <caret line="616" column="40" selection-start-line="616" selection-start-column="40" selection-end-line="616" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MaterialDesign/BackendBundle/Resources/views/Backend/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6705491" vertical-offset="2603" max-vertical-offset="3204">
-          <caret line="167" column="37" selection-start-line="167" selection-start-column="37" selection-end-line="167" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.37104824" vertical-offset="2189" max-vertical-offset="6354">
+          <caret line="134" column="57" selection-start-line="134" selection-start-column="57" selection-end-line="134" selection-end-column="57" />
           <folding />
         </state>
       </provider>

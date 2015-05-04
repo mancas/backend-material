@@ -233,6 +233,11 @@ header {
   .chart-deep-purple:before {
     background-color: #4527a0; }
 
+.chart-pink {
+  background-color: #e91e63; }
+  .chart-pink:before {
+    background-color: #ad1457; }
+
 .chart-sm-item {
   margin-bottom: 3rem;
   position: relative;
@@ -281,5 +286,139 @@ header {
       font-size: 2.2rem; }
     .chart-sm-item .chart-desc span {
       font-size: 1.2rem; }
+
+.chart-large-item {
+  margin-bottom: 3rem;
+  position: relative;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
+  min-height: 5rem; }
+  .chart-large-item .pie-chart {
+    float: left;
+    padding: 1.5rem;
+    width: 100%;
+    min-height: 20rem;
+    position: relative; }
+    .chart-large-item .pie-chart canvas {
+      width: 100%;
+      min-width: 20rem;
+      min-height: 20rem;
+      height: 15rem;
+      vertical-align: top; }
+    .chart-large-item .pie-chart h2 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 3rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0 -50% 0 0;
+      transform: translate(-50%, -50%);
+      color: #ffffff; }
+  .chart-large-item .chart-desc {
+    color: rgba(0, 0, 0, 0.54);
+    float: left;
+    background-color: #ffffff;
+    width: 100%;
+    text-align: center;
+    padding: 1.6rem 1.2rem; }
+    .chart-large-item .chart-desc * {
+      margin: 0; }
+    .chart-large-item .chart-desc span {
+      font-size: 2.2rem; }
+
+.card-item {
+  margin-bottom: 3rem;
+  position: relative;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
+  min-height: 5rem; }
+  .card-item .card-title {
+    background-color: #f4f4f4;
+    padding: 2rem 3rem;
+    position: relative; }
+    .card-item .card-title h2 {
+      margin: 0;
+      font-size: 1.8rem; }
+    .card-item .card-title h3 {
+      margin: 1rem 0 0 0;
+      font-size: 1.4rem;
+      color: rgba(0, 0, 0, 0.54); }
+    .card-item .card-title .float-action-button {
+      position: absolute;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 10rem;
+      text-align: center;
+      top: 100%;
+      right: 2rem;
+      transform: translate(-50%, -50%);
+      line-height: 5rem;
+      color: #ffffff;
+      cursor: pointer;
+      z-index: 12;
+      transition: box-shadow 300ms ease 0s; }
+      .card-item .card-title .float-action-button:hover {
+        box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.3); }
+    .card-item .card-title .fab-pink {
+      background-color: #e91e63; }
+    .card-item .card-title .fab-cyan {
+      background-color: #00bcd4; }
+    .card-item .card-title .fab-green {
+      background-color: #4caf50; }
+    .card-item .card-title .fab-red {
+      background-color: #f44336; }
+    .card-item .card-title .fab-lime {
+      background-color: #cddc39; }
+    .card-item .card-title .fab-yellow {
+      background-color: #ffeb3b; }
+  .card-item .card-description {
+    padding: 1.5rem 0; }
+    .card-item .card-description .list-view {
+      position: relative; }
+      .card-item .card-description .list-view .list-item {
+        text-decoration: none;
+        padding: 1rem 2rem;
+        position: relative;
+        display: block;
+        overflow: hidden;
+        transition: background-color 300ms ease 0s;
+        cursor: pointer; }
+        .card-item .card-description .list-view .list-item:hover {
+          background-color: #e0f7fa; }
+        .card-item .card-description .list-view .list-item img.li-small {
+          width: 3.5rem;
+          height: 3.5rem;
+          border-radius: 10rem;
+          margin-right: 1rem; }
+        .card-item .card-description .list-view .list-item .list-content {
+          display: block;
+          width: auto; }
+          .card-item .card-description .list-view .list-item .list-content .li-title {
+            font-weight: bold;
+            display: block;
+            font-size: 1.3rem;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: rgba(0, 0, 0, 0.87);
+            line-height: 1.4rem; }
+          .card-item .card-description .list-view .list-item .list-content .li-description {
+            font-size: 1.2rem;
+            width: 100%;
+            color: rgba(0, 0, 0, 0.54);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap; }
+  .card-item .card-footer {
+    text-align: center;
+    width: 100%;
+    border-top: solid 0.1rem rgba(0, 0, 0, 0.12);
+    padding: 0.5rem; }
+    .card-item .card-footer a {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.54); }
+      .card-item .card-footer a:hover {
+        color: rgba(0, 0, 0, 0.87); }
 
 /*# sourceMappingURL=custom.css.map */

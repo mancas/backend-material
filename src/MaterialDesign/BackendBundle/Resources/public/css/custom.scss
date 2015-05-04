@@ -40,6 +40,8 @@ $wtext: rgba(255, 255, 255, 0.100);
 $background-hover: #f4f4f4;
 $not-active-link: #4c4c4c;
 
+$material-cyan-list-view-hover: #e0f7fa;
+
 body, html {
   height: 100%;
 }
@@ -420,6 +422,13 @@ header {
   }
 }
 
+.chart-pink {
+  background-color: $material-pink;
+  &:before {
+    background-color: $material-pink-hover;
+  }
+}
+
 .chart-sm-item {
   margin-bottom: 3rem;
   position: relative;
@@ -487,6 +496,194 @@ header {
 
     span {
       font-size: 1.2rem;
+    }
+  }
+}
+
+.chart-large-item {
+  margin-bottom: 3rem;
+  position: relative;
+  box-shadow: 0 0.1rem 0.1rem $box-shadow;
+  min-height: 5rem;
+
+  .pie-chart {
+    float: left;
+    padding: 1.5rem;
+    width: 100%;
+    min-height: 20rem;
+    position: relative;
+    canvas {
+      width: 100%;
+      min-width: 20rem;
+      min-height: 20rem;
+      height: 15rem;
+      vertical-align: top;
+    }
+
+    h2 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 3rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0 -50% 0 0;
+      transform: translate(-50%, -50%);
+      color: $white;
+    }
+  }
+
+  .chart-desc {
+    color: $secondary-icons;
+    float:left;
+    background-color: $white;
+    width: 100%;
+    text-align: center;
+    padding: 1.6rem 1.2rem;
+
+    * {
+      margin: 0;
+    }
+
+    span {
+      font-size: 2.2rem;
+    }
+  }
+}
+
+.card-item {
+  margin-bottom: 3rem;
+  position: relative;
+  box-shadow: 0 0.1rem 0.1rem $box-shadow;
+  min-height: 5rem;
+
+  .card-title {
+    background-color: $background-hover;
+    padding: 2rem 3rem;
+    position: relative;
+    h2 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      margin: 1rem 0 0 0;
+      font-size: 1.4rem;
+      color: $secondary-icons;
+    }
+
+    .float-action-button {
+      position: absolute;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 10rem;
+      text-align: center;
+      top: 100%;
+      right: 2rem;
+      transform: translate(-50%, -50%);
+      line-height: 5rem;
+      color: $white;
+      cursor: pointer;
+      z-index: 12;
+      transition: box-shadow 300ms ease 0s;
+
+      &:hover {
+        box-shadow: 0 0.2rem 0.7rem $box-shadow;
+      }
+    }
+
+    .fab-pink {
+      background-color: $material-pink;
+    }
+
+    .fab-cyan {
+      background-color: $material-cyan;
+    }
+
+    .fab-green {
+      background-color: $material-green;
+    }
+
+    .fab-red {
+      background-color: $material-red;
+    }
+
+    .fab-lime {
+      background-color: $material-lime;
+    }
+
+    .fab-yellow {
+      background-color: $material-yellow;
+    }
+  }
+
+  .card-description {
+    padding: 1.5rem 0;
+    .list-view {
+      position: relative;
+
+      .list-item {
+        text-decoration: none;
+        padding: 1rem 2rem;
+        position: relative;
+        display: block;
+        overflow: hidden;
+        transition: background-color 300ms ease 0s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $material-cyan-list-view-hover;
+        }
+
+        img.li-small {
+          width: 3.5rem;
+          height: 3.5rem;
+          border-radius: 10rem;
+          margin-right: 1rem;
+        }
+
+        .list-content {
+          display: block;
+          width: auto;
+          .li-title {
+            font-weight: bold;
+            display: block;
+            font-size: 1.3rem;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: $text;
+            line-height: 1.4rem;
+          }
+
+          .li-description {
+            font-size: 1.2rem;
+            width: 100%;
+            color: $secondary-icons;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  .card-footer {
+    text-align: center;
+    width: 100%;
+    border-top: solid 0.1rem $dividers;
+    padding: 0.5rem;
+
+    a {
+      text-decoration: none;
+      color: $secondary-icons;
+
+      &:hover {
+        color: $text;
+      }
     }
   }
 }

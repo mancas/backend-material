@@ -67,6 +67,109 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="chart-large-item chart-amber">
+                <div class="clearfix">
+                    <div class="pie-chart">
+                        <canvas id="test-chart-5" data-maxvalue="100" data-value="45"></canvas>
+                        <h2></h2>
+                    </div>
+                    <div class="chart-desc">
+                        <span>Emails sent</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="chart-large-item chart-green">
+                <div class="clearfix">
+                    <div class="pie-chart">
+                        <canvas id="test-chart-6" data-maxvalue="100" data-value="68"></canvas>
+                        <h2></h2>
+                    </div>
+                    <div class="chart-desc">
+                        <span>Emails sent</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="chart-large-item chart-purple">
+                <div class="clearfix">
+                    <div class="pie-chart">
+                        <canvas id="test-chart-7" data-maxvalue="100" data-value="10"></canvas>
+                        <h2></h2>
+                    </div>
+                    <div class="chart-desc">
+                        <span>Emails sent</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="chart-large-item chart-red">
+                <div class="clearfix">
+                    <div class="pie-chart">
+                        <canvas id="test-chart-8" data-maxvalue="100" data-value="89"></canvas>
+                        <h2></h2>
+                    </div>
+                    <div class="chart-desc">
+                        <span>Emails sent</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card-item">
+                <div class="card-title">
+                    <h2>Recent Items</h2>
+                    <h3>Since your last visit</h3>
+                    <a class="float-action-button fab-red">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+                <div class="card-description">
+                    <div class="list-view">
+                        <a class="list-item">
+                            <img class="li-small pull-left" src="{{ asset('bundles/backend/img/user.png') }}" />
+                            <span class="list-content">
+                                <b class="li-title">Picos El Cartujano</b>
+                                <small class="li-description">Picos de pan con aceite de oliva</small>
+                            </span>
+                        </a>
+
+                        <a class="list-item">
+                            <img class="li-small pull-left" src="{{ asset('bundles/backend/img/user.png') }}" />
+                            <span class="list-content">
+                                <b class="li-title">Picos El Cartujano</b>
+                                <small class="li-description">Picos de pan con aceite de oliva</small>
+                            </span>
+                        </a>
+
+                        <a class="list-item">
+                            <img class="li-small pull-left" src="{{ asset('bundles/backend/img/user.png') }}" />
+                            <span class="list-content">
+                                <b class="li-title">Picos El Cartujano</b>
+                                <small class="li-description">Picos de pan con aceite de oliva</small>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">View all entries</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
@@ -90,16 +193,18 @@
             hSpace: 4,
             offsetX: 5,
             offsetY: 0,
+            radiusOffset: 40,
             tooltips: [],
             bars: function c_bars(id, values, height, width, color) {
                 var canvas = document.querySelector('#' + id);
-                var clientRect = canvas.getBoundingClientRect();
-                canvas.width = clientRect.width;
-                canvas.height = clientRect.height;
                 if (typeof canvas === 'undefined') {
                     console.error('Canvas element does not exist');
                     return;
                 }
+
+                var clientRect = canvas.getBoundingClientRect();
+                canvas.width = clientRect.width;
+                canvas.height = clientRect.height;
                 var cWidth = (width ? width : canvas.width);
                 var cHeight = (height ? height : canvas.height);
                 var yScale = cHeight/values.max();
@@ -162,6 +267,72 @@
                 var span = this.tooltips[canvas.id];
                 delete this.tooltips[canvas.id];
                 span.parentNode.removeChild(span);
+            },
+
+            pie: function c_pie(id, maxValue, currentValue, color) {
+                var canvas = document.querySelector('#' + id);
+                var maxValue = maxValue || parseInt(canvas.dataset.maxvalue);
+                var currentValue = currentValue || parseInt(canvas.dataset.value);
+
+                if (parseInt(currentValue) > parseInt(maxValue)) {
+                    console.error('Wrong values detected');
+                    return;
+                }
+
+                if (typeof canvas === 'undefined') {
+                    console.error('Canvas element does not exist');
+                    return;
+                }
+
+                var h2 = canvas.nextElementSibling;
+                if (typeof h2 !== 'undefined') {
+                    h2.textContent = (100*currentValue)/maxValue + '%';
+                }
+
+                var startAngle = -0.5 * Math.PI;
+                var endAngle = (((2 * Math.PI) * currentValue) / maxValue) - 0.5 * Math.PI;
+                var clientRect = canvas.getBoundingClientRect();
+
+                canvas.width = clientRect.width;
+                canvas.height = clientRect.width;
+                var radius = (canvas.width / 2) - this.radiusOffset;
+                var ctx = canvas.getContext('2d');
+                ctx.strokeStyle = color ? color : '#ffffff';
+                ctx.lineWidth = 8;
+                ctx.translate(canvas.width / 2, canvas.height / 2);
+                ctx.beginPath();
+                ctx.arc(0, 0, radius, startAngle, endAngle);
+                ctx.stroke();
+
+                // Draw the rest of the circle
+                ctx.beginPath();
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+                ctx.arc(0, 0, radius, endAngle, startAngle);
+                ctx.stroke();
+
+                this._drawTicks(ctx, radius);
+            },
+
+            _drawTicks: function c_drawTicks(ctx, radius) {
+                var rot = 0;
+                ctx.lineWidth = 1;
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
+                while (rot < 2*Math.PI) {
+                    ctx.beginPath();
+                    ctx.moveTo(radius + 10, 0);
+                    ctx.lineTo(radius + 18, 0);
+                    ctx.stroke();
+
+                    ctx.rotate(Math.PI/8);
+
+                    ctx.beginPath();
+                    ctx.moveTo(radius + 10, 0);
+                    ctx.lineTo(radius + 14, 0);
+                    ctx.stroke();
+
+                    rot += Math.PI/4;
+                    ctx.rotate(Math.PI/8);
+                }
             }
         };
 
@@ -169,5 +340,9 @@
         Charts.bars('test-chart-2', [9, 4,9, 3, 2, 1, 1, 2, 8, 7], null, null, '#ffffff');
         Charts.bars('test-chart-3', [9, 3, 2, 8, 7,9, 3, 2, 1], null, null, '#ffffff');
         Charts.bars('test-chart-4', [9, 3, 2, 1, 9,9, 3, 2, 1, 8, 7], null, null, '#ffffff');
+        Charts.pie('test-chart-5');
+        Charts.pie('test-chart-6');
+        Charts.pie('test-chart-7');
+        Charts.pie('test-chart-8');
     </script>
 {% endblock %}
