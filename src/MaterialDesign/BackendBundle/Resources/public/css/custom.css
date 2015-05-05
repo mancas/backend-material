@@ -2,6 +2,9 @@
 body, html {
   height: 100%; }
 
+body {
+  background-color: #fafafa; }
+
 * {
   margin: 0;
   box-sizing: border-box; }
@@ -139,7 +142,8 @@ header {
   #sidenav .main-menu-wrapper {
     width: 32rem;
     height: 100%;
-    overflow-y: auto; }
+    overflow-y: auto;
+    background-color: #ffffff; }
   #sidenav ul {
     transition: max-height 300ms ease-in;
     overflow: hidden; }
@@ -331,7 +335,8 @@ header {
   margin-bottom: 3rem;
   position: relative;
   box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
-  min-height: 5rem; }
+  min-height: 5rem;
+  background-color: #ffffff; }
   .card-item .card-title {
     background-color: #f4f4f4;
     padding: 2rem 3rem;
@@ -350,27 +355,40 @@ header {
       border-radius: 10rem;
       text-align: center;
       top: 100%;
-      right: 2rem;
+      right: 0;
       transform: translate(-50%, -50%);
       line-height: 5rem;
       color: #ffffff;
       cursor: pointer;
       z-index: 12;
-      transition: box-shadow 300ms ease 0s; }
+      transition: box-shadow 300ms ease 0s;
+      transition: background-color 300ms ease 0s; }
       .card-item .card-title .float-action-button:hover {
         box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.3); }
     .card-item .card-title .fab-pink {
       background-color: #e91e63; }
+      .card-item .card-title .fab-pink:hover {
+        background-color: #ad1457; }
     .card-item .card-title .fab-cyan {
       background-color: #00bcd4; }
+      .card-item .card-title .fab-cyan:hover {
+        background-color: #00838f; }
     .card-item .card-title .fab-green {
       background-color: #4caf50; }
+      .card-item .card-title .fab-green:hover {
+        background-color: #2e7d32; }
     .card-item .card-title .fab-red {
       background-color: #f44336; }
+      .card-item .card-title .fab-red:hover {
+        background-color: #c62828; }
     .card-item .card-title .fab-lime {
       background-color: #cddc39; }
+      .card-item .card-title .fab-lime:hover {
+        background-color: #9e9d24; }
     .card-item .card-title .fab-yellow {
       background-color: #ffeb3b; }
+      .card-item .card-title .fab-yellow:hover {
+        background-color: #f9a825; }
   .card-item .card-description {
     padding: 1.5rem 0; }
     .card-item .card-description .list-view {
@@ -410,6 +428,8 @@ header {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap; }
+  .card-item .card-padding {
+    padding: 1.5rem 2rem; }
   .card-item .card-footer {
     text-align: center;
     width: 100%;
@@ -420,5 +440,186 @@ header {
       color: rgba(0, 0, 0, 0.54); }
       .card-item .card-footer a:hover {
         color: rgba(0, 0, 0, 0.87); }
+
+.card-cyan .card-title {
+  background-color: #00bcd4;
+  color: #ffffff; }
+  .card-cyan .card-title h3 {
+    color: #ffffff; }
+
+.card-green .card-title {
+  background-color: #4caf50;
+  color: #ffffff; }
+  .card-green .card-title h3 {
+    color: #ffffff; }
+
+.card-indigo .card-title {
+  background-color: #3f51b5;
+  color: #ffffff; }
+  .card-indigo .card-title h3 {
+    color: #ffffff; }
+
+.card-deep-orange .card-title {
+  background-color: #ff5722;
+  color: #ffffff; }
+  .card-deep-orange .card-title h3 {
+    color: #ffffff; }
+
+.card-amber .card-title {
+  background-color: #ffc107;
+  color: #ffffff; }
+  .card-amber .card-title h3 {
+    color: #ffffff; }
+
+.card-lime .card-title {
+  background-color: #cddc39;
+  color: #ffffff; }
+  .card-lime .card-title h3 {
+    color: #ffffff; }
+
+.simple-card {
+  padding: 2rem 3rem;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
+  width: 100%;
+  margin-bottom: 2rem;
+  color: rgba(0, 0, 0, 0.54);
+  position: relative;
+  transition: all 300ms ease 0s; }
+  .simple-card p {
+    margin: 0; }
+  .simple-card .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.4rem;
+    z-index: 12;
+    color: #ffffff;
+    opacity: 0.7; }
+    .simple-card .close:hover {
+      opacity: 1; }
+
+.sc-cyan {
+  background-color: #00bcd4;
+  color: #ffffff; }
+
+.sc-red {
+  background-color: #f44336;
+  color: #ffffff; }
+
+.sc-amber {
+  background-color: #ffc107;
+  color: #ffffff; }
+
+.sc-pink {
+  background-color: #e91e63;
+  color: #ffffff; }
+
+.sc-lime {
+  background-color: #cddc39;
+  color: #ffffff; }
+
+/** COMMON CLASSES **/
+.closed {
+  height: 0;
+  margin: 0;
+  padding: 0; }
+
+.shake {
+  animation: shake .4s;
+  animation-iteration-count: 3; }
+
+@keyframes shake {
+  0% {
+    transform: translateX(0); }
+  25% {
+    transform: translateX(1rem); }
+  50% {
+    transform: translateX(-1rem); }
+  75% {
+    transform: translateX(1rem); }
+  100% {
+    transform: translateX(0); } }
+.help-block {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 1rem 0;
+  display: block; }
+
+.form-control {
+  border-radius: 0;
+  border: 0;
+  border-bottom: solid 0.1rem rgba(0, 0, 0, 0.26);
+  box-shadow: none;
+  padding: 0.6rem 0;
+  position: relative;
+  outline: none !important; }
+  .form-control:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: 12;
+    width: 10rem;
+    height: 2rem;
+    background-color: #f44336; }
+  .form-control:active, .form-control:focus {
+    box-shadow: none; }
+
+.form-group .line {
+  position: relative;
+  display: inline-block;
+  width: 100%; }
+  .form-group .line:after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: 12;
+    width: 0%;
+    height: 0.2rem;
+    background-color: #2196f3;
+    transition: width 300ms ease 0s; }
+.form-group label {
+  font-size: 1.4rem;
+  width: 100%; }
+
+.form-group .line.toggled:after {
+  width: 100%; }
+
+.form-group.error .line .form-control {
+  border-color: #f44336; }
+
+.form-group.error .help-block {
+  color: #f44336; }
+
+.form-group.error .line:after {
+  background-color: #f44336; }
+
+.form-group.success .line .form-control {
+  border-color: #4caf50; }
+
+.form-group.success .help-block {
+  color: #4caf50; }
+
+.form-group.success .line:after {
+  background-color: #4caf50; }
+
+.form-group.warning .line .form-control {
+  border-color: #ffc107; }
+
+.form-group.warning .help-block {
+  color: #ffc107; }
+
+.form-group.warning .line:after {
+  background-color: #ffc107; }
+
+.input-group .input-group-addon {
+  border: 0;
+  background-color: transparent;
+  border-radius: 0;
+  font-size: 2.3rem;
+  padding: 0 1rem 0 0; }
 
 /*# sourceMappingURL=custom.css.map */

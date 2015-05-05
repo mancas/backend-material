@@ -169,6 +169,94 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-md-6">
+            <div class="card-item card-lime">
+                <div class="card-title">
+                    <h2>Recent Items</h2>
+                    <h3>Since your last visit</h3>
+                    <a class="float-action-button fab-green">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+                <div class="card-description">
+                    <div class="list-view">
+                        <a class="list-item">
+                            <img class="li-small pull-left" src="{{ asset('bundles/backend/img/user.png') }}" />
+                            <span class="list-content">
+                                <b class="li-title">Picos El Cartujano</b>
+                                <small class="li-description">Picos de pan con aceite de oliva</small>
+                            </span>
+                        </a>
+
+                        <a class="list-item">
+                            <img class="li-small pull-left" src="{{ asset('bundles/backend/img/user.png') }}" />
+                            <span class="list-content">
+                                <b class="li-title">Picos El Cartujano</b>
+                                <small class="li-description">Picos de pan con aceite de oliva</small>
+                            </span>
+                        </a>
+
+                        <a class="list-item">
+                            <img class="li-small pull-left" src="{{ asset('bundles/backend/img/user.png') }}" />
+                            <span class="list-content">
+                                <b class="li-title">Picos El Cartujano</b>
+                                <small class="li-description">Picos de pan con aceite de oliva</small>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="#">View all entries</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="simple-card sc-cyan" data-shake="true">
+                <a href="" title="Close" class="close"><i class="fa fa-times"></i></a>
+                <p>
+                    Cras leo sem, egestas a accumsan eget, euismod at nunc. Praesent vel mi blandit, tempus ex gravida, accumsan dui. Sed sed aliquam augue. Nullam vel suscipit purus, eu facilisis ante. Mauris nec commodo felis. Cras leo sem, egestas a accumsan eget, euismod at nunc. Praesent vel mi blandit, tempus ex gravida, accumsan dui. Sed sed aliquam augue. Nullam vel suscipit purus, eu facilisis ante. Mauris nec commodo felis.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card-item card-lime">
+                <div class="card-description card-padding">
+                    <form method="post">
+                        <div class="form-group">
+                            <div class="line">
+                                <input class="form-control" placeholder="Input sample" />
+                            </div>
+                            <small class="help-block">
+                                This is an example of help block
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-test">This is a label</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <div class="line">
+                                    <input id="input-test" class="form-control" placeholder="Input sample" />
+                                </div>
+                            </div>
+                            <small class="help-block">
+                                This is an example of help block
+                            </small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
@@ -344,5 +432,45 @@
         Charts.pie('test-chart-6');
         Charts.pie('test-chart-7');
         Charts.pie('test-chart-8');
+
+        var HTMLHelper = {
+            init: function() {
+                this._initFormEvents();
+                this._initCloseEvents();
+                this._initShakeElements();
+            },
+
+            _initCloseEvents: function() {
+                var closeTags = document.querySelectorAll('.close');
+                Array.prototype.forEach.call(closeTags, function(tag) {
+                    tag.addEventListener('click', function(evt) {
+                        evt.preventDefault();
+                        tag.parentNode.classList.add('closed');
+                    });
+                });
+            },
+
+            _initShakeElements: function() {
+                var shakeElements = document.querySelectorAll('[data-shake="true"]');
+                Array.prototype.forEach.call(shakeElements, function(elem) {
+                    elem.classList.add('shake');
+                });
+            },
+
+            _initFormEvents: function() {
+                var inputs = document.querySelectorAll('.form-control');
+                Array.prototype.forEach.call(inputs, function(elem) {
+                    elem.addEventListener('focus', function(){
+                        elem.parentNode.classList.add('toggled');
+                    });
+
+                    elem.addEventListener('blur', function(){
+                        elem.parentNode.classList.remove('toggled');
+                    });
+                });
+            }
+        };
+
+        HTMLHelper.init();
     </script>
 {% endblock %}

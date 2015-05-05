@@ -18,7 +18,9 @@ $material-green: #4caf50;
 $material-green-hover: #2e7d32;
 $material-light-green: #8bc34a;
 $material-lime: #cddc39;
+$material-lime-hover: #9e9d24;
 $material-yellow: #ffeb3b;
+$material-yellow-hover: #f9a825;
 $material-amber: #ffc107;
 $material-amber-hover: #ff8f00;
 $material-orange: #ff9800;
@@ -41,9 +43,14 @@ $background-hover: #f4f4f4;
 $not-active-link: #4c4c4c;
 
 $material-cyan-list-view-hover: #e0f7fa;
+$material-body-background: #fafafa;
 
 body, html {
   height: 100%;
+}
+
+body {
+  background-color: $material-body-background;
 }
 
 * {
@@ -267,6 +274,7 @@ header {
     width: 32rem;
     height: 100%;
     overflow-y: auto;
+    background-color: $white;
   }
 
   ul {
@@ -557,6 +565,7 @@ header {
   position: relative;
   box-shadow: 0 0.1rem 0.1rem $box-shadow;
   min-height: 5rem;
+  background-color: $white;
 
   .card-title {
     background-color: $background-hover;
@@ -580,13 +589,14 @@ header {
       border-radius: 10rem;
       text-align: center;
       top: 100%;
-      right: 2rem;
+      right: 0;
       transform: translate(-50%, -50%);
       line-height: 5rem;
       color: $white;
       cursor: pointer;
       z-index: 12;
       transition: box-shadow 300ms ease 0s;
+      transition: background-color 300ms ease 0s;
 
       &:hover {
         box-shadow: 0 0.2rem 0.7rem $box-shadow;
@@ -595,26 +605,44 @@ header {
 
     .fab-pink {
       background-color: $material-pink;
+      &:hover {
+        background-color: $material-pink-hover;
+      }
     }
 
     .fab-cyan {
       background-color: $material-cyan;
+      &:hover {
+        background-color: $material-cyan-hover;
+      }
     }
 
     .fab-green {
       background-color: $material-green;
+      &:hover {
+        background-color: $material-green-hover;
+      }
     }
 
     .fab-red {
       background-color: $material-red;
+      &:hover {
+        background-color: $material-red-hover;
+      }
     }
 
     .fab-lime {
       background-color: $material-lime;
+      &:hover {
+        background-color: $material-lime-hover;
+      }
     }
 
     .fab-yellow {
       background-color: $material-yellow;
+      &:hover {
+        background-color: $material-yellow-hover;
+      }
     }
   }
 
@@ -671,6 +699,10 @@ header {
     }
   }
 
+  .card-padding {
+    padding: 1.5rem 2rem;
+  }
+
   .card-footer {
     text-align: center;
     width: 100%;
@@ -685,5 +717,270 @@ header {
         color: $text;
       }
     }
+  }
+}
+
+.card-cyan{
+  .card-title {
+    background-color: $material-cyan;
+    color: $white;
+    
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-green {
+  .card-title {
+    background-color: $material-green;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-indigo {
+  .card-title {
+    background-color: $material-indigo;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-deep-orange {
+  .card-title {
+    background-color: $material-deep-orange;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-amber {
+  .card-title {
+    background-color: $material-amber;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-lime {
+  .card-title {
+    background-color: $material-lime;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.simple-card {
+  padding: 2rem 3rem;
+  box-shadow: 0 0.1rem 0.1rem $box-shadow;
+  width: 100%;
+  margin-bottom: 2rem;
+  color: $secondary-icons;
+  position: relative;
+  transition: all 300ms ease 0s;
+
+  p {
+    margin: 0;
+  }
+
+  .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.4rem;
+    z-index: 12;
+    color: $white;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.sc-cyan {
+  background-color: $material-cyan;
+  color: $white;
+}
+
+.sc-red {
+  background-color: $material-red;
+  color: $white;
+}
+
+.sc-amber {
+  background-color: $material-amber;
+  color: $white;
+}
+
+.sc-pink {
+  background-color: $material-pink;
+  color: $white;
+}
+
+.sc-lime {
+  background-color: $material-lime;
+  color: $white;
+}
+
+/** COMMON CLASSES **/
+.closed {
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.shake {
+  animation: shake .4s;
+  animation-iteration-count: 3;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(1rem); }
+  50% { transform: translateX(-1rem); }
+  75% { transform: translateX(1rem); }
+  100% { transform: translateX(0); }
+}
+
+.help-block {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 1rem 0;
+  display: block;
+}
+
+.form-control {
+  border-radius: 0;
+  border: 0;
+  border-bottom: solid 0.1rem $disabled-hint;
+  box-shadow: none;
+  padding: 0.6rem 0;
+  position: relative;
+  outline: none !important;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: 12;
+    width: 10rem;
+    height: 2rem;
+    background-color: $material-red;
+  }
+
+  &:active, &:focus {
+    box-shadow: none;
+  }
+}
+
+.form-group {
+  .line {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    &:after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      content: '';
+      z-index: 12;
+      width: 0%;
+      height: 0.2rem;
+      background-color: $material-blue;
+      transition: width 300ms ease 0s;
+    }
+  }
+
+  label {
+    font-size: 1.4rem;
+    width: 100%;
+  }
+}
+.form-group .line.toggled {
+  &:after {
+    width: 100%;
+  }
+}
+
+.form-group.error .line {
+  .form-control {
+    border-color: $material-red;
+  }
+}
+
+.form-group.error {
+  .help-block {
+    color: $material-red;
+  }
+}
+
+.form-group.error .line {
+  &:after {
+    background-color: $material-red;
+  }
+}
+
+.form-group.success .line {
+  .form-control {
+    border-color: $material-green;
+  }
+}
+
+.form-group.success {
+  .help-block {
+    color: $material-green;
+  }
+}
+
+.form-group.success .line {
+  &:after {
+    background-color: $material-green;
+  }
+}
+
+.form-group.warning .line {
+  .form-control {
+    border-color: $material-amber;
+  }
+}
+
+.form-group.warning {
+  .help-block {
+    color: $material-amber;
+  }
+}
+
+.form-group.warning .line {
+  &:after {
+    background-color: $material-amber;
+  }
+}
+
+.input-group {
+  .input-group-addon {
+    border: 0;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 2.3rem;
+    padding: 0 1rem 0 0;
   }
 }
