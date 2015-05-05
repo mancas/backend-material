@@ -18,7 +18,9 @@ $material-green: #4caf50;
 $material-green-hover: #2e7d32;
 $material-light-green: #8bc34a;
 $material-lime: #cddc39;
+$material-lime-hover: #9e9d24;
 $material-yellow: #ffeb3b;
+$material-yellow-hover: #f9a825;
 $material-amber: #ffc107;
 $material-amber-hover: #ff8f00;
 $material-orange: #ff9800;
@@ -41,9 +43,14 @@ $background-hover: #f4f4f4;
 $not-active-link: #4c4c4c;
 
 $material-cyan-list-view-hover: #e0f7fa;
+$material-body-background: #fafafa;
 
 body, html {
   height: 100%;
+}
+
+body {
+  background-color: $material-body-background;
 }
 
 * {
@@ -267,6 +274,7 @@ header {
     width: 32rem;
     height: 100%;
     overflow-y: auto;
+    background-color: $white;
   }
 
   ul {
@@ -557,6 +565,7 @@ header {
   position: relative;
   box-shadow: 0 0.1rem 0.1rem $box-shadow;
   min-height: 5rem;
+  background-color: $white;
 
   .card-title {
     background-color: $background-hover;
@@ -580,13 +589,14 @@ header {
       border-radius: 10rem;
       text-align: center;
       top: 100%;
-      right: 2rem;
+      right: 0;
       transform: translate(-50%, -50%);
       line-height: 5rem;
       color: $white;
       cursor: pointer;
       z-index: 12;
       transition: box-shadow 300ms ease 0s;
+      transition: background-color 300ms ease 0s;
 
       &:hover {
         box-shadow: 0 0.2rem 0.7rem $box-shadow;
@@ -595,26 +605,44 @@ header {
 
     .fab-pink {
       background-color: $material-pink;
+      &:hover {
+        background-color: $material-pink-hover;
+      }
     }
 
     .fab-cyan {
       background-color: $material-cyan;
+      &:hover {
+        background-color: $material-cyan-hover;
+      }
     }
 
     .fab-green {
       background-color: $material-green;
+      &:hover {
+        background-color: $material-green-hover;
+      }
     }
 
     .fab-red {
       background-color: $material-red;
+      &:hover {
+        background-color: $material-red-hover;
+      }
     }
 
     .fab-lime {
       background-color: $material-lime;
+      &:hover {
+        background-color: $material-lime-hover;
+      }
     }
 
     .fab-yellow {
       background-color: $material-yellow;
+      &:hover {
+        background-color: $material-yellow-hover;
+      }
     }
   }
 
@@ -686,4 +714,117 @@ header {
       }
     }
   }
+}
+
+.card-cyan{
+  .card-title {
+    background-color: $material-cyan;
+    color: $white;
+    
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-green {
+  .card-title {
+    background-color: $material-green;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-indigo {
+  .card-title {
+    background-color: $material-indigo;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-deep-orange {
+  .card-title {
+    background-color: $material-deep-orange;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-amber {
+  .card-title {
+    background-color: $material-amber;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-lime {
+  .card-title {
+    background-color: $material-lime;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.simple-card {
+  padding: 2rem 3rem;
+  box-shadow: 0 0.1rem 0.1rem $box-shadow;
+  width: 100%;
+  margin-bottom: 2rem;
+  color: $secondary-icons;
+  position: relative;
+
+  p {
+    margin: 0;
+  }
+
+  .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.2rem;
+    z-index: 12;
+    color: $white;
+  }
+}
+
+.sc-cyan {
+  background-color: $material-cyan;
+  color: $white;
+}
+
+.sc-red {
+  background-color: $material-red;
+  color: $white;
+}
+
+.sc-amber {
+  background-color: $material-amber;
+  color: $white;
+}
+
+.sc-pink {
+  background-color: $material-pink;
+  color: $white;
+}
+
+.sc-lime {
+  background-color: $material-lime;
+  color: $white;
 }

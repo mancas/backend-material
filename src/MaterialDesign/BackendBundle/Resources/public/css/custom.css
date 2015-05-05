@@ -2,6 +2,9 @@
 body, html {
   height: 100%; }
 
+body {
+  background-color: #fafafa; }
+
 * {
   margin: 0;
   box-sizing: border-box; }
@@ -139,7 +142,8 @@ header {
   #sidenav .main-menu-wrapper {
     width: 32rem;
     height: 100%;
-    overflow-y: auto; }
+    overflow-y: auto;
+    background-color: #ffffff; }
   #sidenav ul {
     transition: max-height 300ms ease-in;
     overflow: hidden; }
@@ -331,7 +335,8 @@ header {
   margin-bottom: 3rem;
   position: relative;
   box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
-  min-height: 5rem; }
+  min-height: 5rem;
+  background-color: #ffffff; }
   .card-item .card-title {
     background-color: #f4f4f4;
     padding: 2rem 3rem;
@@ -350,27 +355,40 @@ header {
       border-radius: 10rem;
       text-align: center;
       top: 100%;
-      right: 2rem;
+      right: 0;
       transform: translate(-50%, -50%);
       line-height: 5rem;
       color: #ffffff;
       cursor: pointer;
       z-index: 12;
-      transition: box-shadow 300ms ease 0s; }
+      transition: box-shadow 300ms ease 0s;
+      transition: background-color 300ms ease 0s; }
       .card-item .card-title .float-action-button:hover {
         box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.3); }
     .card-item .card-title .fab-pink {
       background-color: #e91e63; }
+      .card-item .card-title .fab-pink:hover {
+        background-color: #ad1457; }
     .card-item .card-title .fab-cyan {
       background-color: #00bcd4; }
+      .card-item .card-title .fab-cyan:hover {
+        background-color: #00838f; }
     .card-item .card-title .fab-green {
       background-color: #4caf50; }
+      .card-item .card-title .fab-green:hover {
+        background-color: #2e7d32; }
     .card-item .card-title .fab-red {
       background-color: #f44336; }
+      .card-item .card-title .fab-red:hover {
+        background-color: #c62828; }
     .card-item .card-title .fab-lime {
       background-color: #cddc39; }
+      .card-item .card-title .fab-lime:hover {
+        background-color: #9e9d24; }
     .card-item .card-title .fab-yellow {
       background-color: #ffeb3b; }
+      .card-item .card-title .fab-yellow:hover {
+        background-color: #f9a825; }
   .card-item .card-description {
     padding: 1.5rem 0; }
     .card-item .card-description .list-view {
@@ -420,5 +438,78 @@ header {
       color: rgba(0, 0, 0, 0.54); }
       .card-item .card-footer a:hover {
         color: rgba(0, 0, 0, 0.87); }
+
+.card-cyan .card-title {
+  background-color: #00bcd4;
+  color: #ffffff; }
+  .card-cyan .card-title h3 {
+    color: #ffffff; }
+
+.card-green .card-title {
+  background-color: #4caf50;
+  color: #ffffff; }
+  .card-green .card-title h3 {
+    color: #ffffff; }
+
+.card-indigo .card-title {
+  background-color: #3f51b5;
+  color: #ffffff; }
+  .card-indigo .card-title h3 {
+    color: #ffffff; }
+
+.card-deep-orange .card-title {
+  background-color: #ff5722;
+  color: #ffffff; }
+  .card-deep-orange .card-title h3 {
+    color: #ffffff; }
+
+.card-amber .card-title {
+  background-color: #ffc107;
+  color: #ffffff; }
+  .card-amber .card-title h3 {
+    color: #ffffff; }
+
+.card-lime .card-title {
+  background-color: #cddc39;
+  color: #ffffff; }
+  .card-lime .card-title h3 {
+    color: #ffffff; }
+
+.simple-card {
+  padding: 2rem 3rem;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
+  width: 100%;
+  margin-bottom: 2rem;
+  color: rgba(0, 0, 0, 0.54);
+  position: relative; }
+  .simple-card p {
+    margin: 0; }
+  .simple-card .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.2rem;
+    z-index: 12;
+    color: #ffffff; }
+
+.sc-cyan {
+  background-color: #00bcd4;
+  color: #ffffff; }
+
+.sc-red {
+  background-color: #f44336;
+  color: #ffffff; }
+
+.sc-amber {
+  background-color: #ffc107;
+  color: #ffffff; }
+
+.sc-pink {
+  background-color: #e91e63;
+  color: #ffffff; }
+
+.sc-lime {
+  background-color: #cddc39;
+  color: #ffffff; }
 
 /*# sourceMappingURL=custom.css.map */
