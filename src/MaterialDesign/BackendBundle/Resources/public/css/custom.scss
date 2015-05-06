@@ -1027,3 +1027,39 @@ textarea {
     }
   }
 }
+
+.data-table {
+  tr {
+    height: 6rem;
+    td {
+      vertical-align: middle !important;
+    }
+  }
+  .btn {
+    background-color: $white;
+    border: solid 0.1rem $disabled-hint;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    transition: all 300ms ease;
+    position: relative;
+    padding: 0;
+    line-height: 4rem;
+    color: $secondary-icons;
+    margin-right: 0.7rem;
+
+    i {
+      font-size: 1.5rem;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: $disabled-hint;
+      color: $white
+    }
+  }
+}

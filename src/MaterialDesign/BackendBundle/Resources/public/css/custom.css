@@ -650,4 +650,29 @@ textarea {
   .input-group .input-group-addon:last-child {
     padding: 0 0 0 1rem; }
 
+.data-table tr {
+  height: 6rem; }
+  .data-table tr td {
+    vertical-align: middle !important; }
+.data-table .btn {
+  background-color: #ffffff;
+  border: solid 0.1rem rgba(0, 0, 0, 0.26);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  transition: all 300ms ease;
+  position: relative;
+  padding: 0;
+  line-height: 4rem;
+  color: rgba(0, 0, 0, 0.54);
+  margin-right: 0.7rem; }
+  .data-table .btn i {
+    font-size: 1.5rem; }
+  .data-table .btn:last-of-type {
+    margin-right: 0; }
+  .data-table .btn:hover {
+    background-color: rgba(0, 0, 0, 0.26);
+    color: #ffffff; }
+
 /*# sourceMappingURL=custom.css.map */
