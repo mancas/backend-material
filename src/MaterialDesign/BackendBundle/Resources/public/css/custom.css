@@ -554,7 +554,9 @@ header {
   box-shadow: none;
   padding: 0.6rem 0;
   position: relative;
-  outline: none !important; }
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
   .form-control:before {
     position: absolute;
     top: 0;
@@ -584,6 +586,17 @@ header {
     height: 0.2rem;
     background-color: #2196f3;
     transition: width 300ms ease 0s; }
+.form-group .select:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 1.5rem 1.5rem;
+  border-color: transparent transparent rgba(0, 0, 0, 0.54) transparent;
+  position: absolute;
+  right: 0;
+  bottom: 0.8rem;
+  z-index: 5; }
 .form-group label {
   font-size: 1.4rem;
   width: 100%; }
