@@ -924,58 +924,74 @@ header {
   }
 }
 
-.form-group.error .line {
-  .form-control {
-    border-color: $material-red;
-  }
-}
+.form-group.has-success {
+  .line {
+    .form-control {
+      border-color: $material-green;
+      box-shadow: none;
+      border-width: 0 0 0.1rem 0;
+    }
 
-.form-group.error {
-  .help-block {
-    color: $material-red;
+    &:after {
+      background-color: $material-green;
+    }
   }
-}
 
-.form-group.error .line {
-  &:after {
-    background-color: $material-red;
+  .input-group-addon {
+    color: $material-green;
   }
-}
 
-.form-group.success .line {
-  .form-control {
-    border-color: $material-green;
-  }
-}
-
-.form-group.success {
   .help-block {
     color: $material-green;
   }
 }
 
-.form-group.success .line {
-  &:after {
-    background-color: $material-green;
+.form-group.has-error {
+  .line {
+    .form-control {
+      border-color: $material-red;
+      box-shadow: none;
+      border-width: 0 0 0.1rem 0;
+    }
+
+    &:after {
+      background-color: $material-red;
+    }
+  }
+
+  .input-group-addon {
+    color: $material-red;
+  }
+
+  .help-block {
+    color: $material-red;
   }
 }
 
-.form-group.warning .line {
-  .form-control {
-    border-color: $material-amber;
-  }
-}
+.form-group.has-warning {
+  .line {
+    .form-control {
+      border-color: $material-amber;
+      box-shadow: none;
+      border-width: 0 0 0.1rem 0;
+    }
 
-.form-group.warning {
+    &:after {
+      background-color: $material-amber;
+    }
+  }
+
+  .input-group-addon {
+    color: $material-amber;
+  }
+
   .help-block {
     color: $material-amber;
   }
 }
 
-.form-group.warning .line {
-  &:after {
-    background-color: $material-amber;
-  }
+textarea {
+  resize: none;
 }
 
 .input-group {
@@ -984,6 +1000,13 @@ header {
     background-color: transparent;
     border-radius: 0;
     font-size: 2.3rem;
-    padding: 0 1rem 0 0;
+
+    &:first-child {
+      padding: 0 1rem 0 0;
+    }
+
+    &:last-child {
+      padding: 0 0 0 1rem;
+    }
   }
 }
