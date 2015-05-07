@@ -861,6 +861,8 @@ header {
   100% { transform: translateX(0); }
 }
 
+/** FORMS **/
+
 .help-block {
   font-size: 1.1rem;
   margin: 0.5rem 0 1rem 0;
@@ -926,7 +928,6 @@ header {
       position: absolute;
       right: 0;
       bottom: 0.8rem;
-      z-index: 5;
     }
   }
 
@@ -1011,6 +1012,10 @@ textarea {
   resize: none;
 }
 
+select.form-control {
+  background-color: transparent;
+}
+
 .input-group {
   .input-group-addon {
     border: 0;
@@ -1028,6 +1033,81 @@ textarea {
   }
 }
 
+/** CHECKBOX and RADIO **/
+.checkbox, .radio, .checkbox-inline, .radio-inline {
+  input[type="checkbox"], input[type="radio"] {
+    opacity: 0;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 0 0 -3rem;
+  }
+
+  label {
+    padding-left: 3rem;
+  }
+
+  .material-checkbox {
+    &:before {
+      content: '';
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      left: 0;
+      border: solid 0.1rem $material-grey;
+    }
+
+    &:after {
+      content: '';
+      width: 1.4rem;
+      height: 1.4rem;
+      position: absolute;
+      left: 0.3rem;
+      top: 0.3rem;
+      background-color: $material-cyan;
+      border-radius: 0.2rem;
+      transition: transform 0.2s;
+      transform: scale(0);
+    }
+  }
+
+  .material-radio {
+    &:before {
+      content: '';
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      left: 0;
+      border: solid 0.1rem $material-grey;
+      border-radius: 50%;
+    }
+
+    &:after {
+      content: '';
+      width: 1.4rem;
+      height: 1.4rem;
+      position: absolute;
+      left: 0.3rem;
+      top: 0.3rem;
+      background-color: $material-cyan;
+      border-radius: 50%;
+      transition: transform 0.2s;
+      transform: scale(0);
+    }
+  }
+
+  input[type="checkbox"]:checked+.material-checkbox,
+  input[type="radio"]:checked+.material-radio {
+    &:after {
+      transform: scale(1);
+    }
+  }
+}
+
+label, label.checkbox-inline, label.radio-inline {
+  padding-left: 3rem;
+}
+
+/** TABLES **/
 .data-table {
   tr {
     height: 6rem;
