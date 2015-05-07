@@ -851,9 +851,20 @@ header {
 .shake {
   animation: shake .4s;
   animation-iteration-count: 3;
+  -webkit-animation-name: shake; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: .4s; /* Chrome, Safari, Opera */
+  -webkit-animation-iteration-count: 3; /* Chrome, Safari, Opera */
 }
 
 @keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(1rem); }
+  50% { transform: translateX(-1rem); }
+  75% { transform: translateX(1rem); }
+  100% { transform: translateX(0); }
+}
+
+@-webkit-keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(1rem); }
   50% { transform: translateX(-1rem); }
@@ -1033,6 +1044,11 @@ select.form-control {
   }
 }
 
+.form-control[disabled] {
+  background-color: transparent;
+  color: $disabled-hint;
+}
+
 /** CHECKBOX and RADIO **/
 .checkbox, .radio, .checkbox-inline, .radio-inline {
   input[type="checkbox"], input[type="radio"] {
@@ -1063,7 +1079,7 @@ select.form-control {
       position: absolute;
       left: 0.3rem;
       top: 0.3rem;
-      background-color: $material-cyan;
+      background-color: $material-blue;
       border-radius: 0.2rem;
       transition: transform 0.2s;
       transform: scale(0);
@@ -1088,7 +1104,7 @@ select.form-control {
       position: absolute;
       left: 0.3rem;
       top: 0.3rem;
-      background-color: $material-cyan;
+      background-color: $material-blue;
       border-radius: 50%;
       transition: transform 0.2s;
       transform: scale(0);
@@ -1107,14 +1123,37 @@ label, label.checkbox-inline, label.radio-inline {
   padding-left: 3rem;
 }
 
+.checkbox-inline.disabled, .radio-inline.disabled {
+  .material-radio, .material-checkbox {
+    &:before {
+      border-color: $disabled-hint;
+    }
+  }
+
+  color: $disabled-hint;
+}
+
 /** TABLES **/
 .data-table {
   tr {
     height: 6rem;
+    td, th {
+      &:first-child {
+        padding-left: 3rem;
+      }
+
+      &:last-child {
+        padding-right: 3rem;
+      }
+    }
+
     td {
       vertical-align: middle !important;
     }
   }
+}
+
+table {
   .btn {
     background-color: $white;
     border: solid 0.1rem $disabled-hint;
@@ -1142,4 +1181,149 @@ label, label.checkbox-inline, label.radio-inline {
       color: $white
     }
   }
+
+  .btn-blue {
+    background-color: $material-blue;
+    color: $white;
+    &:hover {
+      background-color: $material-blue-hover;
+    }
+  }
+
+  .btn-red {
+    background-color: $material-red;
+    color: $white;
+    &:hover {
+      background-color: $material-red-hover;
+    }
+  }
+
+  .btn-green {
+    background-color: $material-green;
+    color: $white;
+    &:hover {
+      background-color: $material-green-hover;
+    }
+  }
+
+  .btn-amber {
+    background-color: $material-amber;
+    color: $white;
+    &:hover {
+      background-color: $material-amber-hover;
+    }
+  }
+}
+
+/** BUTTONS **/
+.btn {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 0 0.2rem 0.7rem 0 $box-shadow;
+  transition: box-shadow 300ms ease 0s;
+  transition: background-color 300ms ease 0s;
+  outline: none !important;
+
+  &:hover {
+    box-shadow: 0 0.5rem 1.1rem $box-shadow;
+  }
+}
+
+.btn-blue {
+  background-color: $material-blue;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $material-blue-hover;
+    color: $white;
+  }
+}
+
+.btn-red {
+  background-color: $material-red;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $material-red-hover;
+    color: $white;
+  }
+}
+
+.btn-pink {
+  background-color: $material-pink;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $material-pink-hover;
+    color: $white;
+  }
+}
+
+.btn-green {
+  background-color: $material-green;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $material-green-hover;
+    color: $white;
+  }
+}
+
+.btn-lime {
+  background-color: $material-lime;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $material-lime-hover;
+    color: $white;
+  }
+}
+
+.btn-amber {
+  background-color: $material-amber;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $material-amber-hover;
+    color: $white;
+  }
+}
+
+.btn-purple {
+  background-color: $material-purple;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $material-purple-hover;
+    color: $white;
+  }
+}
+
+.btn-deep-purple {
+  background-color: $material-deep-purple;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $material-deep-purple-hover;
+    color: $white;
+  }
+}
+
+.btn-yellow {
+  background-color: $material-yellow;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $material-yellow-hover;
+    color: $white;
+  }
+}
+
+/** TEXTS **/
+.title-small {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
