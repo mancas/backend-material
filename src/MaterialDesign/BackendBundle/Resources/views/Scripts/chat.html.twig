@@ -19,14 +19,18 @@
             Array.prototype.forEach.call(sendBtns, function (btn) {
                 btn.addEventListener('click', function(evt) {
                     evt.preventDefault();
-                    var message = self.form.querySelector('textarea').textContent;
+                    var message = self.form.querySelector('textarea').value;
+                    if (message === '') {
+                        return;
+                    }
                     var path = btn.href;
                     var params = 'msg=' + message;
                     var xhr = new XMLHttpRequest();
                     xhr.open('POST', path, true);
-                    //xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                    //xhr.setRequestHeader("Content-length", params.length);
-                    //xhr.setRequestHeader("Connection", "close");
+                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    xhr.setRequestHeader('Content-length', params.length);
+                    xhr.setRequestHeader('Connection', 'close');
+                    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
                     xhr.send(params);
                     
                     xhr.onload = function () {
@@ -34,6 +38,7 @@
                         var response = JSON.parse(xhr.responseText);
                         if (response.ok) {
                             self.appendMessage(message, response.avatar, response.time);
+                            self.form.reset();
                         } else {
                             // Open error notification
                         }
@@ -47,8 +52,9 @@
         },
 
         appendMessage: function(message, avatar, time) {
-            var list = this.form.parentNode.parentNode.querySelector('ul');
+            var list = this.form.parentNode.parentNode.querySelector('ul.list-view');
             var li = document.createElement('li');
+            li.className = 'right list-item transparent';
             var img = document.createElement('img');
             img.className = 'list-avatar pull-right';
             img.src = avatar;
@@ -74,7 +80,13 @@
             small.appendChild(i);
             small.innerHTML += time;
 
-            li.appendChild(small);
+            mediaBody.appendChild(small);
+            list.appendChild(li);
+            // TODO: Look for another way
+            setTimeout(function() {
+                li.classList.remove('transparent');
+                list.scrollTop = list.scrollHeight;
+            }, 100);
         }
     }
 </script>
