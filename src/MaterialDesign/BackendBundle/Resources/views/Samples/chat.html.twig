@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <div class="card-item">
+        <div class="card-item card-chat">
             <div class="card-title">
                 <h2>
                     <img src="{{ asset('bundles/backend/img/user-1.jpg') }}" />
@@ -17,7 +17,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="card-description card-chat">
+            <div class="card-description">
                 <ul class="list-view">
                     <li class="list-item">
                         <img class="list-avatar pull-left" src="{{ asset('bundles/backend/img/user-1.jpg') }}" />
@@ -50,6 +50,27 @@
                     </li>
                 </ul>
             </div>
+
+            <div class="card-footer">
+                <form id="message-chat" action="" method="post">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <textarea class="form-control" placeholder="What's on your mind?"></textarea>
+                            <span class="input-group-addon">
+                                <a class="btn send" href="{{ path('admin_save_message', {id: 1}) }}" title="Send message">
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
+
+{% include 'BackendBundle:Scripts:chat.html.twig' %}
+
+<script>
+    ChatHelper.init('message-chat');
+</script>

@@ -480,43 +480,74 @@ header {
       color: rgba(0, 0, 0, 0.54); }
       .card-item .card-footer a:hover {
         color: rgba(0, 0, 0, 0.87); }
-  .card-item .card-chat {
-    background-color: #ffffff; }
-    .card-item .card-chat ul {
-      list-style: none;
-      margin: 0;
-      padding: 0; }
-    .card-item .card-chat .list-item:hover {
-      background-color: transparent !important; }
-    .card-item .card-chat .list-item .list-avatar {
-      width: 3.5rem;
-      height: 3.5rem;
-      display: inline-block;
-      border-radius: 50%;
-      margin-right: 1.5rem; }
-    .card-item .card-chat .list-item .list-bubble {
-      background-color: #ffc107;
-      color: #ffffff;
-      border-radius: 0.2rem;
-      padding: 1rem 3rem;
-      max-width: 70%;
-      display: inline-block; }
-      .card-item .card-chat .list-item .list-bubble p {
-        margin: 0; }
-    .card-item .card-chat .list-item .bubble-date {
-      display: block;
-      font-size: 1.2rem;
-      color: rgba(0, 0, 0, 0.54);
-      margin-top: 0.8rem; }
-      .card-item .card-chat .list-item .bubble-date i {
-        margin-right: 0.2rem; }
-    .card-item .card-chat .list-item.right {
-      text-align: right; }
-      .card-item .card-chat .list-item.right .list-avatar {
-        margin-left: 1.5rem;
-        margin-right: 0; }
-      .card-item .card-chat .list-item.right .list-bubble {
-        background-color: #009688; }
+
+.card-chat {
+  background-color: #ffffff; }
+  .card-chat ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .card-chat .card-description {
+    max-height: 50rem;
+    overflow-y: auto;
+    transition: height 300ms ease 0s; }
+  .card-chat .list-item:hover {
+    background-color: transparent !important; }
+  .card-chat .list-item .list-avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 1.5rem; }
+  .card-chat .list-item .list-bubble {
+    background-color: #ffc107;
+    color: #ffffff;
+    border-radius: 0.2rem;
+    padding: 1rem 3rem;
+    max-width: 70%;
+    display: inline-block; }
+    .card-chat .list-item .list-bubble p {
+      margin: 0; }
+  .card-chat .list-item .bubble-date {
+    display: block;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.54);
+    margin-top: 0.8rem; }
+    .card-chat .list-item .bubble-date i {
+      margin-right: 0.2rem; }
+  .card-chat .list-item.right {
+    text-align: right; }
+    .card-chat .list-item.right .list-avatar {
+      margin-left: 1.5rem;
+      margin-right: 0; }
+    .card-chat .list-item.right .list-bubble {
+      background-color: #009688; }
+  .card-chat .card-footer {
+    position: relative;
+    padding: 0 0 0 1rem; }
+    .card-chat .card-footer .form-group {
+      margin: 0; }
+    .card-chat .card-footer .form-control {
+      border: 0; }
+      .card-chat .card-footer .form-control:focus, .card-chat .card-footer .form-control:active {
+        border: 0; }
+    .card-chat .card-footer .input-group-addon {
+      background-color: #f4f4f4;
+      color: #2196f3;
+      padding: 0 !important;
+      margin-left: 1rem;
+      height: 6.5rem; }
+    .card-chat .card-footer .btn {
+      color: #2196f3;
+      border: 0;
+      box-shadow: none;
+      height: 100%;
+      padding: 0 1.2rem;
+      font-size: 2rem;
+      line-height: 6.5rem;
+      transition: color 300ms ease 0s; }
+      .card-chat .card-footer .btn:hover {
+        color: #1565c0; }
 
 .card-cyan .card-title {
   background-color: #00bcd4;

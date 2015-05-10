@@ -22,3 +22,7 @@ admin:
 admin_index:
     pattern: /dashboard
     defaults: { _controller: BackendBundle:Backend:index }
+
+admin_save_message:
+    pattern: /save-message/{id}
+    defaults: { _controller: BackendBundle:Backend:saveMessage }

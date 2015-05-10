@@ -772,62 +772,108 @@ header {
       }
     }
   }
+}
 
-  .card-chat {
-    background-color: $white;
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+.card-chat {
+  background-color: $white;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card-description {
+    max-height: 50rem;
+    overflow-y: auto;
+    transition: height 300ms ease 0s;
+  }
+
+  .list-item {
+    &:hover {
+      background-color: transparent !important;
+    }
+    .list-avatar {
+      width: 3.5rem;
+      height: 3.5rem;
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 1.5rem;
     }
 
-    .list-item {
-      &:hover {
-        background-color: transparent !important;
-      }
-      .list-avatar {
-        width: 3.5rem;
-        height: 3.5rem;
-        display: inline-block;
-        border-radius: 50%;
-        margin-right: 1.5rem;
-      }
-
-      .list-bubble {
-        background-color: $material-amber;
-        color: $white;
-        border-radius: 0.2rem;
-        padding: 1rem 3rem;
-        max-width: 70%;
-        display: inline-block;
-        p {
-          margin: 0;
-        }
-      }
-
-      .bubble-date {
-        display: block;
-        font-size: 1.2rem;
-        color: $secondary-icons;
-        margin-top: 0.8rem;
-        i {
-          margin-right: 0.2rem;
-        }
+    .list-bubble {
+      background-color: $material-amber;
+      color: $white;
+      border-radius: 0.2rem;
+      padding: 1rem 3rem;
+      max-width: 70%;
+      display: inline-block;
+      p {
+        margin: 0;
       }
     }
 
-    .list-item.right {
-      text-align: right;
-      .list-avatar {
-        margin-left: 1.5rem;
-        margin-right: 0;
-      }
-
-      .list-bubble {
-        background-color: $material-teal;
+    .bubble-date {
+      display: block;
+      font-size: 1.2rem;
+      color: $secondary-icons;
+      margin-top: 0.8rem;
+      i {
+        margin-right: 0.2rem;
       }
     }
   }
+
+  .list-item.right {
+    text-align: right;
+    .list-avatar {
+      margin-left: 1.5rem;
+      margin-right: 0;
+    }
+
+    .list-bubble {
+      background-color: $material-teal;
+    }
+  }
+
+  .card-footer {
+    position: relative;
+    padding: 0 0 0 1rem;
+
+    .form-group {
+      margin: 0;
+    }
+    
+    .form-control {
+      border: 0;
+      &:focus, &:active {
+        border: 0;
+      }
+    }
+
+    .input-group-addon {
+      background-color: $background-hover;
+      color: $material-blue;
+      padding: 0 !important;
+      margin-left: 1rem;
+      height: 6.5rem;
+    }
+
+    .btn {
+      color: $material-blue;
+      border: 0;
+      box-shadow: none;
+      height: 100%;
+      padding: 0 1.2rem;
+      font-size: 2rem;
+      line-height: 6.5rem;
+      transition: color 300ms ease 0s;
+
+      &:hover {
+        color: $material-blue-hover;
+      }
+    }
+  }
+
 }
 
 .card-cyan{
