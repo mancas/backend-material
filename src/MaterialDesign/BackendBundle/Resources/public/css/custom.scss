@@ -1,6 +1,7 @@
 /** MATERIAL COLORS **/
 $material-red: #f44336;
 $material-red-hover: #c62828;
+$material-red-light: #ef9a9a;
 $material-pink: #e91e63;
 $material-pink-hover: #ad1457;
 $material-purple: #9c27b0;
@@ -753,6 +754,7 @@ header {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            display: block;
           }
         }
       }
@@ -781,7 +783,7 @@ header {
 }
 
 .card-chat {
-  background-color: $white;
+  background-color: $background-hover;
   ul {
     list-style: none;
     margin: 0;
@@ -789,6 +791,14 @@ header {
     max-height: 50rem;
     overflow-y: auto;
     cursor: inherit;
+  }
+
+  .card-chat-messages {
+    background-color: $white;
+  }
+
+  .chat-body {
+    border-left: solid 0.1rem $dividers;
   }
 
   .list-item {
@@ -838,14 +848,36 @@ header {
     }
   }
 
-  .card-footer {
+  .row  > div {
+      &:first-child {
+        padding-right: 0;
+      }
+
+      &:last-child {
+        padding-left: 0;
+      }
+  }
+
+  .card-chat-thread {
+    background-color: $background-hover;
+    .list-item {
+
+    }
+
+    .active {
+      background-color: $white;
+    }
+  }
+
+  .card-chat-footer {
     position: relative;
     padding: 0 0 0 1rem;
+    background-color: $white;
 
     .form-group {
       margin: 0;
     }
-    
+
     .form-control {
       border: 0;
       &:focus, &:active {
@@ -1510,10 +1542,11 @@ table {
   transform: translate(-50%, -50%) scale(0);
   z-index: 1032;
   text-align: center;
-  transition: transform 300ms ease 1s;
+  transition: transform 300ms ease 0s;
 
   .material-alert-success,
-  .material-alert-warning {
+  .material-alert-warning,
+  .material-alert-error {
     margin: 0 auto 2rem;
     border-radius: 50%;
     width: 8.8rem;
@@ -1573,6 +1606,32 @@ table {
     }
   }
 
+  .material-alert-error {
+    border: solid 0.4rem $material-red-light;
+    .line {
+      display: block;
+      position: absolute;
+      height: 0.5rem;
+      border-radius: 0.2rem;
+      z-index: 1033;
+      background-color: $material-red;
+    }
+
+    .ma-error-long {
+      width: 5rem;
+      transform: rotate(-45deg);
+      left: calc(50% - 2.5rem);
+      top: calc(50% - 0.25rem);
+    }
+
+    .ma-error-long-reverse {
+      width: 5rem;
+      transform: rotate(45deg);
+      left: calc(50% - 2.5rem);
+      top: calc(50% - 0.25rem);
+    }
+  }
+
   h2 {
     font-size: 2rem;
     line-height: 4rem;
@@ -1600,6 +1659,11 @@ table {
   top: 0;
   left: 0;
   z-index: 1029;
+  display: none;
+}
+
+.material-alert-overlay.open {
+  display: inherit;
 }
 
 .material-alert.open {
@@ -1607,12 +1671,12 @@ table {
 }
 
 /** ALERT ANIMATIONS **/
-.bigger {
+.material-alert.open .bigger {
   animation: bigger .4s;
-  animation-iteration-count: 2;
+  animation-iteration-count: 3;
   -webkit-animation-name: bigger; /* Chrome, Safari, Opera */
   -webkit-animation-duration: .4s; /* Chrome, Safari, Opera */
-  -webkit-animation-iteration-count: 2; /* Chrome, Safari, Opera */
+  -webkit-animation-iteration-count: 3; /* Chrome, Safari, Opera */
 }
 
 @keyframes bigger {

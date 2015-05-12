@@ -470,7 +470,8 @@ header {
             color: rgba(0, 0, 0, 0.54);
             overflow: hidden;
             text-overflow: ellipsis;
-            white-space: nowrap; }
+            white-space: nowrap;
+            display: block; }
   .card-item .card-padding {
     padding: 1.5rem 2rem; }
   .card-item .card-footer {
@@ -485,7 +486,7 @@ header {
         color: rgba(0, 0, 0, 0.87); }
 
 .card-chat {
-  background-color: #ffffff; }
+  background-color: #f4f4f4; }
   .card-chat ul {
     list-style: none;
     margin: 0;
@@ -493,6 +494,10 @@ header {
     max-height: 50rem;
     overflow-y: auto;
     cursor: inherit; }
+  .card-chat .card-chat-messages {
+    background-color: #ffffff; }
+  .card-chat .chat-body {
+    border-left: solid 0.1rem rgba(0, 0, 0, 0.12); }
   .card-chat .list-item:hover {
     background-color: transparent !important; }
   .card-chat .list-item .list-avatar {
@@ -524,22 +529,31 @@ header {
       margin-right: 0; }
     .card-chat .list-item.right .list-bubble {
       background-color: #009688; }
-  .card-chat .card-footer {
+  .card-chat .row > div:first-child {
+    padding-right: 0; }
+  .card-chat .row > div:last-child {
+    padding-left: 0; }
+  .card-chat .card-chat-thread {
+    background-color: #f4f4f4; }
+    .card-chat .card-chat-thread .active {
+      background-color: #ffffff; }
+  .card-chat .card-chat-footer {
     position: relative;
-    padding: 0 0 0 1rem; }
-    .card-chat .card-footer .form-group {
+    padding: 0 0 0 1rem;
+    background-color: #ffffff; }
+    .card-chat .card-chat-footer .form-group {
       margin: 0; }
-    .card-chat .card-footer .form-control {
+    .card-chat .card-chat-footer .form-control {
       border: 0; }
-      .card-chat .card-footer .form-control:focus, .card-chat .card-footer .form-control:active {
+      .card-chat .card-chat-footer .form-control:focus, .card-chat .card-chat-footer .form-control:active {
         border: 0; }
-    .card-chat .card-footer .input-group-addon {
+    .card-chat .card-chat-footer .input-group-addon {
       background-color: #f4f4f4;
       color: #2196f3;
       padding: 0 !important;
       margin-left: 1rem;
       height: 6.5rem; }
-    .card-chat .card-footer .btn {
+    .card-chat .card-chat-footer .btn {
       color: #2196f3;
       border: 0;
       box-shadow: none;
@@ -548,7 +562,7 @@ header {
       font-size: 2rem;
       line-height: 6.5rem;
       transition: color 300ms ease 0s; }
-      .card-chat .card-footer .btn:hover {
+      .card-chat .card-chat-footer .btn:hover {
         color: #1565c0; }
 
 .card-cyan .card-title {
@@ -996,9 +1010,10 @@ table .btn-amber {
   transform: translate(-50%, -50%) scale(0);
   z-index: 1032;
   text-align: center;
-  transition: transform 300ms ease 1s; }
+  transition: transform 300ms ease 0s; }
   .material-alert .material-alert-success,
-  .material-alert .material-alert-warning {
+  .material-alert .material-alert-warning,
+  .material-alert .material-alert-error {
     margin: 0 auto 2rem;
     border-radius: 50%;
     width: 8.8rem;
@@ -1042,6 +1057,25 @@ table .btn-amber {
       height: 0.5rem;
       top: 6.5rem;
       left: calc(50% - 0.25rem); }
+  .material-alert .material-alert-error {
+    border: solid 0.4rem #ef9a9a; }
+    .material-alert .material-alert-error .line {
+      display: block;
+      position: absolute;
+      height: 0.5rem;
+      border-radius: 0.2rem;
+      z-index: 1033;
+      background-color: #f44336; }
+    .material-alert .material-alert-error .ma-error-long {
+      width: 5rem;
+      transform: rotate(-45deg);
+      left: calc(50% - 2.5rem);
+      top: calc(50% - 0.25rem); }
+    .material-alert .material-alert-error .ma-error-long-reverse {
+      width: 5rem;
+      transform: rotate(45deg);
+      left: calc(50% - 2.5rem);
+      top: calc(50% - 0.25rem); }
   .material-alert h2 {
     font-size: 2rem;
     line-height: 4rem;
@@ -1062,20 +1096,24 @@ table .btn-amber {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1029; }
+  z-index: 1029;
+  display: none; }
+
+.material-alert-overlay.open {
+  display: inherit; }
 
 .material-alert.open {
   transform: translate(-50%, -50%) scale(1); }
 
 /** ALERT ANIMATIONS **/
-.bigger {
+.material-alert.open .bigger {
   animation: bigger .4s;
-  animation-iteration-count: 2;
+  animation-iteration-count: 3;
   -webkit-animation-name: bigger;
   /* Chrome, Safari, Opera */
   -webkit-animation-duration: .4s;
   /* Chrome, Safari, Opera */
-  -webkit-animation-iteration-count: 2;
+  -webkit-animation-iteration-count: 3;
   /* Chrome, Safari, Opera */ }
 
 @keyframes bigger {
