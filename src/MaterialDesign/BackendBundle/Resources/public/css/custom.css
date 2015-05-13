@@ -12,6 +12,28 @@ body {
 .transparent {
   opacity: 0; }
 
+/** BACKGROUND COLORS **/
+.bg-red {
+  background-color: #f44336; }
+
+.bg-lime {
+  background-color: #cddc39; }
+
+.bg-pink {
+  background-color: #e91e63; }
+
+.bg-indigo {
+  background-color: #3f51b5; }
+
+.bg-blue {
+  background-color: #2196f3; }
+
+.bg-green {
+  background-color: #4caf50; }
+
+.bg-amber {
+  background-color: #ffc107; }
+
 /** HEADER **/
 body[data-color="red"] header {
   background-color: #f44336; }
@@ -446,11 +468,18 @@ header {
         cursor: pointer; }
         .card-item .card-description .list-view .list-item:hover {
           background-color: #e0f7fa; }
-        .card-item .card-description .list-view .list-item img.li-small {
+        .card-item .card-description .list-view .list-item .li-small {
           width: 3.5rem;
           height: 3.5rem;
           border-radius: 10rem;
           margin-right: 1rem; }
+        .card-item .card-description .list-view .list-item span.li-small {
+          text-align: center;
+          line-height: 3.4rem;
+          font-size: 1.5rem;
+          color: white;
+          font-weight: normal;
+          text-transform: uppercase; }
         .card-item .card-description .list-view .list-item .list-content {
           display: block;
           width: auto; }
@@ -534,9 +563,21 @@ header {
   .card-chat .row > div:last-child {
     padding-left: 0; }
   .card-chat .card-chat-thread {
-    background-color: #f4f4f4; }
+    background-color: #f4f4f4;
+    overflow: hidden; }
+    .card-chat .card-chat-thread .list-view {
+      width: calc(100% + 3.2rem);
+      padding-right: 1.8rem;
+      overflow-y: scroll;
+      max-height: 59rem; }
+    .card-chat .card-chat-thread .list-item:hover {
+      background-color: #ffffff !important; }
     .card-chat .card-chat-thread .active {
       background-color: #ffffff; }
+      .card-chat .card-chat-thread .active:hover {
+        background-color: #ffffff !important; }
+    .card-chat .card-chat-thread .unread {
+      font-weight: bold; }
   .card-chat .card-chat-footer {
     position: relative;
     padding: 0 0 0 1rem;

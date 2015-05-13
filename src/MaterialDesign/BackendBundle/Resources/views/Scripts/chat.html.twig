@@ -1,6 +1,11 @@
 <script>
     var ChatHelper = {
         form: null,
+        messagesContainer: null,
+        titleContainer: null,
+        deleteBtn: null,
+        threads: null,
+
         init: function(form) {
             if (typeof form !== 'object') {
                 this.form = document.querySelector('form#' + form);
@@ -9,46 +14,82 @@
                     return;
                 }
             }
+            this.messagesContainer = document.querySelector('.card-chat-messages');
+            this.titleContainer = document.querySelector('.chat-body .card-title h2');
+            this.deleteBtn = document.querySelector('.chat-body .card-title .delete-thread');
+            this.threads = document.querySelectorAll('.card-chat-thread .list-item');
             this._initSendEvents();
+            this._initSelectThreadEvents();
         },
 
         _initSendEvents: function() {
-            var sendBtns = document.querySelectorAll('.send');
+            var sendBtn = document.querySelector('.send');
             var self = this;
 
-            Array.prototype.forEach.call(sendBtns, function (btn) {
-                btn.addEventListener('click', function(evt) {
+            sendBtn.addEventListener('click', function(evt) {
+                evt.preventDefault();
+                var message = self.form.querySelector('textarea').value;
+                if (message === '') {
+                    return;
+                }
+                var path = sendBtn.href;
+                var params = 'msg=' + message;
+                var callback = function callback(evt) {
+                    console.info(evt.target.response);
+                    var response = JSON.parse(evt.target.responseText);
+                    if (response.ok) {
+                        self.appendMessage(message, response.avatar, response.time);
+                        self.form.reset();
+                    } else {
+                        // Open error notification
+                    }
+                };
+                self._sendRequest('post', path, params, callback);
+            });
+        },
+
+        _initSelectThreadEvents: function() {
+            var self = this;
+
+            Array.prototype.forEach.call(this.threads, function (thread) {
+                thread.addEventListener('click', function(evt) {
                     evt.preventDefault();
                     var message = self.form.querySelector('textarea').value;
                     if (message === '') {
                         return;
                     }
-                    var path = btn.href;
-                    var params = 'msg=' + message;
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('POST', path, true);
-                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                    xhr.setRequestHeader('Content-length', params.length);
-                    xhr.setRequestHeader('Connection', 'close');
-                    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                    xhr.send(params);
-                    
-                    xhr.onload = function () {
-                        console.info(xhr.response);
-                        var response = JSON.parse(xhr.responseText);
+                    var path = thread.href;
+                    var callback = function callback(evt) {
+                        console.info(evt.target.response);
+                        var response = JSON.parse(evt.target.responseText);
                         if (response.ok) {
-                            self.appendMessage(message, response.avatar, response.time);
+                            self.updateThread(response.thread, response.name, response.avatar, response.threadId);
                             self.form.reset();
                         } else {
                             // Open error notification
                         }
                     };
-
-                    xhr.onreadystatechange = function () {
-                        console.info(xhr.readyState);
-                    }
+                    self._sendRequest('get', path, null, callback);
                 });
             });
+        },
+
+        _sendRequest: function(method, path, params, cb) {
+            var xhr = new XMLHttpRequest();
+            xhr.open(method, path, true);
+            if (typeof params !== 'undefined' || params !== null) {
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr.setRequestHeader('Content-length', params.length);
+                xhr.setRequestHeader('Connection', 'close');
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            }
+            xhr.send(params);
+
+            xhr.onload = cb;
+
+            xhr.onreadystatechange = function () {
+                console.info(xhr.readyState);
+            }
         },
 
         appendMessage: function(message, avatar, time) {
@@ -87,6 +128,27 @@
                 li.classList.remove('transparent');
                 list.scrollTop = list.scrollHeight;
             }, 100);
+        },
+
+        updateThread: function(thread, name, avatar, threadId) {
+            this.messagesContainer.innerHTML = thread;
+            var previousThread = document.querySelector('.card-chat-thread .active');
+            var currentThread = document.querySelector('.card-chat-thread .list-item[data-id="' + threadId + '"]');
+
+            previousThread.classList.remove('active');
+            currentThread.classList.add('active');
+
+            this.deleteBtn.dataset.id = threadId;
+
+            if (typeof avatar !== 'undefined' && avatar !== null) {
+                var userAvatar = document.createElement('img');
+                userAvatar.src = avatar;
+                this.titleContainer.innerHTML = avatar;
+            } else {
+                this.titleContainer.innerHTML = '';
+            }
+
+            this.titleContainer.innerHTML += name;
         }
     }
 </script>

@@ -65,6 +65,35 @@ body {
   opacity: 0;
 }
 
+/** BACKGROUND COLORS **/
+.bg-red {
+  background-color: $material-red;
+}
+
+.bg-lime {
+  background-color: $material-lime;
+}
+
+.bg-pink {
+  background-color: $material-pink;
+}
+
+.bg-indigo {
+  background-color: $material-indigo;
+}
+
+.bg-blue {
+  background-color: $material-blue;
+}
+
+.bg-green {
+  background-color: $material-green;
+}
+
+.bg-amber {
+  background-color: $material-amber;
+}
+
 /** HEADER **/
 body[data-color="red"] {
   header {
@@ -725,11 +754,20 @@ header {
           background-color: $material-cyan-list-view-hover;
         }
 
-        img.li-small {
+        .li-small {
           width: 3.5rem;
           height: 3.5rem;
           border-radius: 10rem;
           margin-right: 1rem;
+        }
+
+        span.li-small {
+          text-align: center;
+          line-height: 3.4rem;
+          font-size: 1.5rem;
+          color: white;
+          font-weight: normal;
+          text-transform: uppercase;
         }
 
         .list-content {
@@ -860,12 +898,30 @@ header {
 
   .card-chat-thread {
     background-color: $background-hover;
-    .list-item {
+    overflow: hidden;
 
+    .list-view {
+      width: calc(100% + 3.2rem);
+      padding-right: 1.8rem;
+      overflow-y: scroll;
+      max-height: 59rem;
+    }
+
+    .list-item {
+      &:hover {
+        background-color: $white !important;
+      }
     }
 
     .active {
       background-color: $white;
+      &:hover {
+        background-color: $white !important;
+      }
+    }
+
+    .unread {
+      font-weight: bold;
     }
   }
 

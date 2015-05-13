@@ -3,6 +3,11 @@
         <div class="card-item card-chat">
             <div class="row">
                 <div class="col-md-3 chat-menu">
+                    <div class="card-title text-center">
+                        <h2>
+                            Private Messages
+                        </h2>
+                    </div>
                     <div class="card-description card-chat-thread">
                         <div class="list-view">
                             <a class="list-item active">
@@ -13,7 +18,7 @@
                                 </span>
                             </a>
 
-                            <a class="list-item">
+                            <a class="list-item unread">
                                 <img class="li-small pull-left" src="{{ asset('bundles/backend/img/user-2.jpg') }}" />
                                 <span class="list-content media-body">
                                     <b class="li-title">Peter Smith</b>
@@ -21,8 +26,16 @@
                                 </span>
                             </a>
 
+                            <a class="list-item unread">
+                                <span class="li-small pull-left bg-red">p</span>
+                                <span class="list-content media-body">
+                                    <b class="li-title">Peter Jackson</b>
+                                    <small class="li-description">Quisque consequat arcu eget odio cursus, ut tempor arcu vestibulum</small>
+                                </span>
+                            </a>
+
                             <a class="list-item">
-                                <img class="li-small pull-left" src="{{ asset('bundles/backend/img/user-1.jpg') }}" />
+                                <span class="li-small pull-left bg-blue">o</span>
                                 <span class="list-content media-body">
                                     <b class="li-title">Orlando Bloom</b>
                                     <small class="li-description">Quisque consequat arcu eget odio cursus, ut tempor arcu vestibulum</small>
@@ -41,7 +54,7 @@
                         <div class="card-options">
                             <ul class="options list-unstyled">
                                 <li>
-                                    <a title="Delete thread" href="">
+                                    <a title="Delete thread" class="delete-thread" data-id="1" href="">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </li>
