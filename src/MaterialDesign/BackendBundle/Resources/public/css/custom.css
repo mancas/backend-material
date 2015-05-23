@@ -9,6 +9,9 @@ body {
   margin: 0;
   box-sizing: border-box; }
 
+.borderless {
+  border: 0; }
+
 .transparent {
   opacity: 0; }
 
@@ -33,6 +36,29 @@ body {
 
 .bg-amber {
   background-color: #ffc107; }
+
+/** LOGIN **/
+.login:before {
+  content: '';
+  height: 50%;
+  width: 100%;
+  background-color: #00bcd4;
+  top: 0;
+  position: absolute; }
+.login .login-box {
+  box-shadow: 0 0.1rem 1.1rem rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  border-radius: 0.2rem;
+  padding: 3rem 6rem;
+  width: 45rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 -50% 0 0;
+  transform: translate(-50%, -50%); }
+  .login .login-box .float-action-button {
+    top: 50%;
+    right: -5rem; }
 
 /** HEADER **/
 body[data-color="red"] header {
@@ -356,6 +382,56 @@ header {
     .chart-large-item .chart-desc span {
       font-size: 2.2rem; }
 
+/** FLOAT ACTION BUTTON **/
+.float-action-button {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 10rem;
+  text-align: center;
+  top: 100%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  line-height: 5rem;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 12;
+  transition: box-shadow 300ms ease 0s;
+  transition: background-color 300ms ease 0s; }
+  .float-action-button:hover {
+    box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.3);
+    color: #ffffff; }
+
+.fab-pink {
+  background-color: #e91e63; }
+  .fab-pink:hover {
+    background-color: #ad1457; }
+
+.fab-cyan {
+  background-color: #00bcd4; }
+  .fab-cyan:hover {
+    background-color: #00838f; }
+
+.fab-green {
+  background-color: #4caf50; }
+  .fab-green:hover {
+    background-color: #2e7d32; }
+
+.fab-red {
+  background-color: #f44336; }
+  .fab-red:hover {
+    background-color: #c62828; }
+
+.fab-lime {
+  background-color: #cddc39; }
+  .fab-lime:hover {
+    background-color: #9e9d24; }
+
+.fab-yellow {
+  background-color: #ffeb3b; }
+  .fab-yellow:hover {
+    background-color: #f9a825; }
+
 .card-item {
   margin-bottom: 3rem;
   position: relative;
@@ -413,47 +489,6 @@ header {
             bottom: 0;
             transition: transform 0.3s ease;
             transform: scale(0); }
-    .card-item .card-title .float-action-button {
-      position: absolute;
-      width: 5rem;
-      height: 5rem;
-      border-radius: 10rem;
-      text-align: center;
-      top: 100%;
-      right: 0;
-      transform: translate(-50%, -50%);
-      line-height: 5rem;
-      color: #ffffff;
-      cursor: pointer;
-      z-index: 12;
-      transition: box-shadow 300ms ease 0s;
-      transition: background-color 300ms ease 0s; }
-      .card-item .card-title .float-action-button:hover {
-        box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.3); }
-    .card-item .card-title .fab-pink {
-      background-color: #e91e63; }
-      .card-item .card-title .fab-pink:hover {
-        background-color: #ad1457; }
-    .card-item .card-title .fab-cyan {
-      background-color: #00bcd4; }
-      .card-item .card-title .fab-cyan:hover {
-        background-color: #00838f; }
-    .card-item .card-title .fab-green {
-      background-color: #4caf50; }
-      .card-item .card-title .fab-green:hover {
-        background-color: #2e7d32; }
-    .card-item .card-title .fab-red {
-      background-color: #f44336; }
-      .card-item .card-title .fab-red:hover {
-        background-color: #c62828; }
-    .card-item .card-title .fab-lime {
-      background-color: #cddc39; }
-      .card-item .card-title .fab-lime:hover {
-        background-color: #9e9d24; }
-    .card-item .card-title .fab-yellow {
-      background-color: #ffeb3b; }
-      .card-item .card-title .fab-yellow:hover {
-        background-color: #f9a825; }
   .card-item .card-description {
     padding: 1.5rem 0; }
     .card-item .card-description .list-view {
@@ -829,7 +864,8 @@ select.form-control {
   border: 0;
   background-color: transparent;
   border-radius: 0;
-  font-size: 2.3rem; }
+  font-size: 2rem;
+  min-width: 2.6rem; }
   .input-group .input-group-addon:first-child {
     padding: 0 1rem 0 0; }
   .input-group .input-group-addon:last-child {

@@ -199,44 +199,7 @@
         Charts.pie('test-chart-7');
         Charts.pie('test-chart-8');
 
-        var HTMLHelper = {
-            init: function() {
-                this._initFormEvents();
-                this._initCloseEvents();
-                this._initShakeElements();
-            },
+       </script>
 
-            _initCloseEvents: function() {
-                var closeTags = document.querySelectorAll('.close');
-                Array.prototype.forEach.call(closeTags, function(tag) {
-                    tag.addEventListener('click', function(evt) {
-                        evt.preventDefault();
-                        tag.parentNode.classList.add('closed');
-                    });
-                });
-            },
-
-            _initShakeElements: function() {
-                var shakeElements = document.querySelectorAll('[data-shake="true"]');
-                Array.prototype.forEach.call(shakeElements, function(elem) {
-                    elem.classList.add('shake');
-                });
-            },
-
-            _initFormEvents: function() {
-                var inputs = document.querySelectorAll('.form-control');
-                Array.prototype.forEach.call(inputs, function(elem) {
-                    elem.addEventListener('focus', function(){
-                        elem.parentNode.classList.add('toggled');
-                    });
-
-                    elem.addEventListener('blur', function(){
-                        elem.parentNode.classList.remove('toggled');
-                    });
-                });
-            }
-        };
-
-        HTMLHelper.init();
-    </script>
+        {% include 'BackendBundle:Scripts:html-helper.html.twig' %}
 {% endblock %}

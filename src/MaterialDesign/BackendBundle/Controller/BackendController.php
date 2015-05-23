@@ -11,6 +11,11 @@ class BackendController extends CustomController
         return $this->render('BackendBundle:Backend:index.html.twig');
     }
 
+    public function loginAction()
+    {
+        return $this->render('BackendBundle:Backend:login.html.twig');
+    }
+
     public function saveMessageAction(Request $request) {
         $jsonResponse = json_encode(array('ok' => false));
         if ($request->isXmlHttpRequest()) {

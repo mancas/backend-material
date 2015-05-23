@@ -61,6 +61,10 @@ body {
   box-sizing: border-box;
 }
 
+.borderless {
+  border: 0;
+}
+
 .transparent {
   opacity: 0;
 }
@@ -92,6 +96,36 @@ body {
 
 .bg-amber {
   background-color: $material-amber;
+}
+
+/** LOGIN **/
+.login {
+  &:before {
+    content: '';
+    height: 50%;
+    width: 100%;
+    background-color: $material-cyan;
+    top: 0;
+    position: absolute;
+  }
+
+  .login-box {
+    box-shadow: 0 0.1rem 1.1rem $box-shadow;
+    background-color: $white;
+    border-radius: 0.2rem;
+    padding: 3rem 6rem;
+    width: 45rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 -50% 0 0;
+    transform: translate(-50%, -50%);
+
+    .float-action-button {
+      top: 50%;
+      right: -5rem;
+    }
+  }
 }
 
 /** HEADER **/
@@ -596,6 +630,71 @@ header {
   }
 }
 
+/** FLOAT ACTION BUTTON **/
+.float-action-button {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 10rem;
+  text-align: center;
+  top: 100%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  line-height: 5rem;
+  color: $white;
+  cursor: pointer;
+  z-index: 12;
+  transition: box-shadow 300ms ease 0s;
+  transition: background-color 300ms ease 0s;
+
+  &:hover {
+    box-shadow: 0 0.2rem 0.7rem $box-shadow;
+    color: $white;
+  }
+}
+
+.fab-pink {
+  background-color: $material-pink;
+  &:hover {
+    background-color: $material-pink-hover;
+  }
+}
+
+.fab-cyan {
+  background-color: $material-cyan;
+  &:hover {
+    background-color: $material-cyan-hover;
+  }
+}
+
+.fab-green {
+  background-color: $material-green;
+  &:hover {
+    background-color: $material-green-hover;
+  }
+}
+
+.fab-red {
+  background-color: $material-red;
+  &:hover {
+    background-color: $material-red-hover;
+  }
+}
+
+.fab-lime {
+  background-color: $material-lime;
+  &:hover {
+    background-color: $material-lime-hover;
+  }
+}
+
+.fab-yellow {
+  background-color: $material-yellow;
+  &:hover {
+    background-color: $material-yellow-hover;
+  }
+}
+
 .card-item {
   margin-bottom: 3rem;
   position: relative;
@@ -669,69 +768,6 @@ header {
             transform: scale(0);
           }
         }
-      }
-    }
-
-    .float-action-button {
-      position: absolute;
-      width: 5rem;
-      height: 5rem;
-      border-radius: 10rem;
-      text-align: center;
-      top: 100%;
-      right: 0;
-      transform: translate(-50%, -50%);
-      line-height: 5rem;
-      color: $white;
-      cursor: pointer;
-      z-index: 12;
-      transition: box-shadow 300ms ease 0s;
-      transition: background-color 300ms ease 0s;
-
-      &:hover {
-        box-shadow: 0 0.2rem 0.7rem $box-shadow;
-      }
-    }
-
-    .fab-pink {
-      background-color: $material-pink;
-      &:hover {
-        background-color: $material-pink-hover;
-      }
-    }
-
-    .fab-cyan {
-      background-color: $material-cyan;
-      &:hover {
-        background-color: $material-cyan-hover;
-      }
-    }
-
-    .fab-green {
-      background-color: $material-green;
-      &:hover {
-        background-color: $material-green-hover;
-      }
-    }
-
-    .fab-red {
-      background-color: $material-red;
-      &:hover {
-        background-color: $material-red-hover;
-      }
-    }
-
-    .fab-lime {
-      background-color: $material-lime;
-      &:hover {
-        background-color: $material-lime-hover;
-      }
-    }
-
-    .fab-yellow {
-      background-color: $material-yellow;
-      &:hover {
-        background-color: $material-yellow-hover;
       }
     }
   }
@@ -1279,7 +1315,8 @@ select.form-control {
     border: 0;
     background-color: transparent;
     border-radius: 0;
-    font-size: 2.3rem;
+    font-size: 2rem;
+    min-width: 2.6rem;
 
     &:first-child {
       padding: 0 1rem 0 0;
