@@ -48,6 +48,9 @@ $not-active-link: #4c4c4c;
 $material-cyan-list-view-hover: #e0f7fa;
 $material-body-background: #fafafa;
 
+$material-paginator-gray: #e2e2e2;
+$material-paginator-gray-hover: #D7D7D7;
+
 body, html {
   height: 100%;
 }
@@ -1786,4 +1789,77 @@ table {
   50% { transform: scale(1.2); }
   75% { transform: scale(1.1); }
   100% { transform: scale(1); }
+}
+
+/** PAGINATOR **/
+.material-paginator {
+  padding-left: 0px;
+  list-style: outside none none;
+  li {
+    display: inline-block;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    background-color: $material-paginator-gray;
+    transition: all .3s ease;
+
+    a {
+      width: 4rem;
+      height: 4rem;
+      text-align: center;
+      display: block;
+      line-height: 4rem;
+      text-decoration: none;
+      position: relative;
+      color: $secondary-icons;
+      border-radius: 50%;
+
+      small {
+        font-size: 1.4rem;
+        display: inline-block;
+        transform: translate(0px, 0px);
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $material-paginator-gray-hover;
+        transform: scale(0);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        color: $text;
+        &:before {
+          transform: scale(1);
+        }
+      }
+    }
+
+  }
+
+  .active {
+    a {
+      color: $white;
+      cursor: auto;
+      &:before {
+        background-color: $material-cyan;
+        transform: scale(1);
+      }
+
+      &:hover {
+        color: $white;
+        &:before {
+          background-color: $material-cyan;
+        }
+      }
+    }
+  }
 }
