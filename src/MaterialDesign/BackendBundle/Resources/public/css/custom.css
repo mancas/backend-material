@@ -538,6 +538,8 @@ header {
             display: block; }
   .card-item .card-padding {
     padding: 1.5rem 2rem; }
+    .card-item .card-padding .material-paginator {
+      padding: 0; }
   .card-item .card-footer {
     text-align: center;
     width: 100%;
@@ -1217,8 +1219,8 @@ table .btn-amber {
     transform: scale(1); } }
 /** PAGINATOR **/
 .material-paginator {
-  padding-left: 0px;
-  list-style: outside none none; }
+  list-style: outside none none;
+  padding: 0 2rem; }
   .material-paginator li {
     display: inline-block;
     border-radius: 50%;

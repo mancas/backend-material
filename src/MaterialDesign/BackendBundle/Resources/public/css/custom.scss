@@ -840,6 +840,10 @@ header {
 
   .card-padding {
     padding: 1.5rem 2rem;
+
+    .material-paginator {
+      padding: 0;
+    }
   }
 
   .card-footer {
@@ -1793,8 +1797,8 @@ table {
 
 /** PAGINATOR **/
 .material-paginator {
-  padding-left: 0px;
   list-style: outside none none;
+  padding: 0 2rem;
   li {
     display: inline-block;
     border-radius: 50%;
