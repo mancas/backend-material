@@ -669,6 +669,13 @@ header {
   }
 }
 
+.fab-purple {
+  background-color: $material-purple;
+  &:hover {
+    background-color: $material-purple-hover;
+  }
+}
+
 .fab-cyan {
   background-color: $material-cyan;
   &:hover {
@@ -701,6 +708,13 @@ header {
   background-color: $material-yellow;
   &:hover {
     background-color: $material-yellow-hover;
+  }
+}
+
+.fab-amber {
+  background-color: $material-amber;
+  &:hover {
+    background-color: $material-amber-hover;
   }
 }
 
@@ -1038,6 +1052,40 @@ header {
   }
 }
 
+.card-purple {
+  .card-title {
+    background-color: $material-purple;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-deep-purple {
+  .card-title {
+    background-color: $material-deep-purple;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+.card-red {
+  .card-title {
+    background-color: $material-red;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+}
+
+
 .card-indigo {
   .card-title {
     background-color: $material-indigo;
@@ -1142,6 +1190,7 @@ header {
   height: 0;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .shake {
