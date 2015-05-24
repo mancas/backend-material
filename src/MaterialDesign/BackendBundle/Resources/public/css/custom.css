@@ -232,6 +232,8 @@ header {
         color: rgba(0, 0, 0, 0.54); }
         #sidenav ul .submenu ul li a:hover {
           color: rgba(0, 0, 0, 0.87); }
+    #sidenav ul .submenu a.active {
+      color: rgba(0, 0, 0, 0.87) !important; }
     #sidenav ul .submenu i.pull-right {
       transition: transform 300ms ease 100ms;
       transform: rotate(0deg); }

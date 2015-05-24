@@ -237,7 +237,7 @@ header {
       background-color: transparent !important;
     }
   }
-  
+
   nav {
     height: 6rem;
     margin: 0;
@@ -405,8 +405,13 @@ header {
             &:hover {
               color: $text;
             }
+
           }
         }
+      }
+
+      a.active {
+        color: $text !important;
       }
 
       i.pull-right {
@@ -520,7 +525,7 @@ header {
   .clearfix {
     position: relative;
   }
-  
+
   .chart-tooltip {
     background-color: $white;
     width: 2.2rem;
@@ -565,9 +570,9 @@ header {
     text-align: center;
     padding: 1.6rem 1.2rem;
 
-     * {
-       margin: 0;
-     }
+    * {
+      margin: 0;
+    }
 
     h2 {
       overflow: hidden;
@@ -734,7 +739,7 @@ header {
       .options {
         margin: 0;
         overflow: hidden;
-        
+
         li {
           float: left;
         }
@@ -931,13 +936,13 @@ header {
   }
 
   .row  > div {
-      &:first-child {
-        padding-right: 0;
-      }
+    &:first-child {
+      padding-right: 0;
+    }
 
-      &:last-child {
-        padding-left: 0;
-      }
+    &:last-child {
+      padding-left: 0;
+    }
   }
 
   .card-chat-thread {
@@ -1015,7 +1020,7 @@ header {
   .card-title {
     background-color: $material-cyan;
     color: $white;
-    
+
     h3 {
       color: $white;
     }
