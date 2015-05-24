@@ -28,6 +28,10 @@
     {% include 'BackendBundle:Samples:paginator.html.twig' %}
 {% endblock %}
 
+{% block breadcrumb %}
+    {% include 'BackendBundle:Samples:breadcrumb.html.twig' %}
+{% endblock %}
+
 {% block javascripts %}
     {{ parent() }}
     {#<script src="{{ asset('bundles/backend/js/excanvas.min.js') }}"></script>

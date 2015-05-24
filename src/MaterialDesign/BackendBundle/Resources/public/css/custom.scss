@@ -57,6 +57,7 @@ body, html {
 
 body {
   background-color: $material-body-background;
+  padding-top: 6rem;
 }
 
 * {
@@ -457,7 +458,7 @@ header {
 }
 
 #content {
-  padding: 8rem 0 3rem 25rem;
+  padding: 3rem 0 3rem 25rem;
 }
 
 /** CHARTS **/
@@ -1864,6 +1865,26 @@ table {
           background-color: $material-cyan;
         }
       }
+    }
+  }
+}
+
+/** BREADCRUMB **/
+.breadcrumb {
+  padding: 1rem 3rem 1rem 28rem;
+  margin: 0;
+  border-bottom: solid 0.1rem $dividers;
+
+  a {
+    text-decoration: none;
+    color: $disabled-hint;
+
+    &:hover {
+      color: $secondary-icons;
+    }
+
+    i {
+      margin-right: 0.6rem;
     }
   }
 }
